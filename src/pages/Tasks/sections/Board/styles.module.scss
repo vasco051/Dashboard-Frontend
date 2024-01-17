@@ -1,0 +1,14 @@
+@import "src/assets/styles/templates";
+
+.wrapper {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(300px, 1fr));
+  gap: 24px;
+
+  overflow-y: auto;
+}

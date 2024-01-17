@@ -1,0 +1,19 @@
+@import "src/assets/styles/templates";
+
+.main {
+  @extend %transition;
+  flex: 1 1 auto;
+
+  overflow: hidden;
+  margin-left: 250px;
+}
+
+.hideSidebar {
+  margin-left: 54px;
+}
+
+@media screen and (max-width: 767px) {
+  .main {
+    margin-left: 54px;
+  }
+}

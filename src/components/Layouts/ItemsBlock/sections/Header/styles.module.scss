@@ -1,0 +1,46 @@
+@import "src/assets/styles/templates";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 4px;
+}
+
+.title {
+  @extend %transition;
+  color: var(--Greyscale-900);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+
+  .countItems {
+    color: var(--Greyscale-500);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+  }
+}
+
+.options {
+  @include flex-gap(16px);
+  align-items: center;
+
+  svg {
+    width: 14px;
+    height: 14px;
+
+    cursor: pointer;
+
+    &:hover path {
+      stroke: var(--Primary-600-base);
+    }
+
+    path {
+      @extend %transition;
+      stroke: var(--Greyscale-400);
+    }
+  }
+}

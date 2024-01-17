@@ -1,0 +1,36 @@
+@import "src/assets/styles/templates";
+
+// aside
+.aside {
+  @extend %transition;
+  flex: 0 0 auto;
+
+  position: fixed;
+
+  user-select: none;
+  overflow: hidden;
+  padding: 32px 16px;
+
+  width: 250px;
+  height: 100vh;
+
+  border-right: 1px solid var(--Greyscale-100);
+  background: var(--Additional-white);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.01);
+}
+
+.content {
+  @include flex-col-gap(32px);
+
+  overflow: hidden;
+  height: 100%;
+}
+
+.hidden {
+  width: 54px;
+  padding: calc((54px - 28px) / 2);
+
+  cursor: pointer;
+  overflow-y: hidden;
+}
+

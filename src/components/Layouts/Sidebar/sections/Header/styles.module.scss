@@ -1,0 +1,46 @@
+@import "src/assets/styles/templates";
+
+// Header
+.header {
+  @extend %transition;
+
+  flex: 0 0 auto;
+  overflow: hidden;
+  padding: 0 16px;
+
+  .button {
+    @include flex-gap(12px);
+    align-items: center;
+
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .logo {
+    width: 28px;
+    height: 28px;
+
+    path {
+      fill: var(--Primary-600-base);
+    }
+  }
+
+  .name {
+    @extend %transition;
+
+    height: max-content;
+    color: var(--Greyscale-900);
+
+    line-height: 28px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+.hidden {
+  padding: 0;
+
+  .name {
+    opacity: 0;
+  }
+}

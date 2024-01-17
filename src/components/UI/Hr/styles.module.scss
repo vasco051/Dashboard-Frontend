@@ -1,0 +1,10 @@
+@import "src/assets/styles/templates";
+
+.hr {
+  @extend %transition;
+
+  background: var(--Greyscale-100);
+
+  height: 1px;
+  width: 100%;
+}

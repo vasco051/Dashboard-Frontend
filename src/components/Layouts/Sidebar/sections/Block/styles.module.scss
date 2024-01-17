@@ -1,0 +1,19 @@
+@import "src/assets/styles/templates";
+
+.block {
+  @include flex-col-gap(12px);
+}
+
+.title {
+  padding: 0 16px;
+
+  color: var(--Greyscale-400, #94A3B8);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+.list {
+  @include flex-col-gap(0);
+}

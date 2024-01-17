@@ -1,0 +1,27 @@
+@mixin flex-gap($px) {
+  display: flex;
+  gap: $px;
+}
+
+@mixin flex-col-gap($px) {
+  display: flex;
+  flex-direction: column;
+  gap: $px;
+}
+
+@mixin section($px) {
+  @extend %transition;
+  border-radius: 12px;
+  background: var(--Additional-white);
+  padding: $px;
+}
+
+%wrapper {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+%transition {
+  transition: all .7s ease-out 0s;
+}

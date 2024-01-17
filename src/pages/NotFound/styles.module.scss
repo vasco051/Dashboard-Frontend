@@ -1,0 +1,39 @@
+@import "src/assets/styles/templates";
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+.wrapper {
+  @include flex-col-gap(32px);
+  max-width: 600px;
+}
+
+.title, .subTitle, .description {
+  text-align: center;
+  color: var(--Greyscale-900);
+  font-weight: 700;
+}
+
+.title {
+  font-size: 100px;
+}
+
+.content {
+  @include flex-col-gap(12px)
+}
+
+.subTitle {
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: 0.2px;
+}
+
+.description {
+  font-size: 20px;
+  letter-spacing: 0.2px;
+}

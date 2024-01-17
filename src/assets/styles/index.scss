@@ -1,0 +1,40 @@
+@import "normalize.scss";
+@import "theme.scss";
+@import "templates";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+html, body{
+  height: 100%;
+}
+
+#root, .App{
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+
+  @extend %transition;
+  background: var(--App-bg);
+}
+
+// scroll Opera and Chrome
+::-webkit-scrollbar-track {
+  background-color: var(--Greyscale-100); /*Цвет скролла*/
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px; /*Закругление ползунка*/
+  background-color: var(--Greyscale-300); /*Цвет ползунка*/
+}
+::-webkit-scrollbar {
+  width: 10px; /*Толщина скролла*/
+}
+
+// scroll FireFox
+* {
+  scrollbar-color: var(--Greyscale-100) var(--Greyscale-300); /*Цвет скролла, цвет ползунка*/
+  scrollbar-width: thin; /*Толщина скролла thin, auto*/
+}

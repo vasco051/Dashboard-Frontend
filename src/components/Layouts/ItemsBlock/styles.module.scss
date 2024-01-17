@@ -1,0 +1,9 @@
+@import "src/assets/styles/templates";
+
+.block {
+  @include flex-col-gap(16px);
+}
+
+.list {
+  @include flex-col-gap(16px);
+}

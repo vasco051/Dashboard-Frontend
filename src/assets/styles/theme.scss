@@ -1,0 +1,39 @@
+:root {
+  --Additional-emerald: #34D399;
+  --Secondary-Algal-fuel-500-base: #24D164;
+  --Additional-indigo: #6366F1;
+  --Secondary-Amber-400: #ffb702;
+  --Secondary-Amber-500-base: #F6A723;
+  --Secondary-Glamour-pink-400: #F472B6;
+
+  --App-bg: #F8FAFC;
+
+  --Additional-white: #FFFFFF;
+  --Greyscale-50: #F8FAFC;
+  --Greyscale-100: #f1f2f6;
+  --Greyscale-300: #CBD5E1; // хз
+  --Greyscale-400: #94A3B8;
+  --Greyscale-500: #64748B;
+  --Greyscale-900: #0F172A;
+  --Primary-600-base: #2563EB;
+}
+
+html[app_theme='dark'] {
+  --Additional-emerald: #34D399;
+  --Secondary-Algal-fuel-500-base: #24D164;
+  --Additional-indigo: #6366F1;
+  --Secondary-Amber-400: #FBBF24;
+  --Secondary-Amber-500-base: #F6A723;
+  --Secondary-Glamour-pink-400: #F472B6;
+
+  --App-bg: #1B1B1B; // збс
+
+  --Additional-white: #1f1f1f; // збс
+  --Greyscale-50: #262626; // збс
+  --Greyscale-100: #464646; // збс
+  --Greyscale-300: #595c5e; // хз
+  --Greyscale-400: #9d9fa9; // норм
+  --Greyscale-500: #828282; // збс
+  --Greyscale-900: #e3e1e1; // збс
+  --Primary-600-base: #219BFF; //
+}

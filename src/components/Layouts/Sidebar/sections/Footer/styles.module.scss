@@ -1,0 +1,10 @@
+@import "src/assets/styles/templates";
+
+.list {
+  @extend %transition;
+  @include flex-col-gap(8px);
+}
+
+.short {
+  gap: 24px;
+}
