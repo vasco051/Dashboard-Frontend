@@ -28,7 +28,7 @@ export class ProjectStore implements IProjectStore {
 
   // sets
   setProject(project: TProject) {
-    this._projects.set(project.project_id, project)
+    this._projects.set(project.id, project)
   }
 
   setCurrentProject(project: TProject | null) {
@@ -50,10 +50,21 @@ export class ProjectStore implements IProjectStore {
     }
 
     this.setIsLoading(false)
+    return response
   }
 
-  getOne = async () => {
+  getOne = async (id: number) => {
+    this.setIsLoading(true)
+    this.setCurrentProject(null)
 
+    const response = await projectService.getOne(id);
+
+    if ('data' in response) {
+      this.setCurrentProject(response.data.project)
+    }
+
+    this.setIsLoading(false)
+    return response
   }
 
   create = async () => {

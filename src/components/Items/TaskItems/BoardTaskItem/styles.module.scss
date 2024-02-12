@@ -17,6 +17,8 @@
 
   .title {
     @extend %transition;
+    transition-property: color;
+
     color: var(--Greyscale-900);
     font-size: 16px;
     font-weight: 600;
@@ -24,7 +26,7 @@
     letter-spacing: 0.2px;
   }
 
-  .category {
+  .tag {
     @include flex-gap(4px);
     align-items: center;
 
@@ -37,6 +39,8 @@
 
     span {
       @extend %transition;
+      transition-property: color;
+
       color: var(--Greyscale-400);
       font-size: 14px;
       font-weight: 500;
@@ -54,6 +58,7 @@
 
 .dateWrapper {
   @extend %transition;
+  transition-property: background-color;
   @include flex-gap(6px);
   align-items: center;
   padding: 8px;
@@ -69,6 +74,8 @@
 
   .date {
     @extend %transition;
+    transition-property: color;
+
     color: var(--Greyscale-500);
     font-size: 14px;
     font-weight: 500;

@@ -1,10 +1,18 @@
 import {FC} from 'react';
 import {Route, Routes} from "react-router-dom";
+import {observer} from "mobx-react";
 
-import {privateRoutes, publicRoutes} from "./routingConfig.tsx";
+import {useStore} from "hooks/useStore.ts";
 
-const AppRouting: FC = () => {
-  const routes = [...publicRoutes, ...privateRoutes]
+import {privateRoutes, publicRoutes, unauthorizedRoutes} from "./routingConfig.tsx";
+
+const AppRouting: FC = observer(() => {
+  const {isAuth} = useStore().accountStore
+
+  const routes = [...publicRoutes]
+
+  if (isAuth) routes.push(...privateRoutes)
+  else routes.push(...unauthorizedRoutes)
 
   return (
     <Routes>
@@ -13,6 +21,6 @@ const AppRouting: FC = () => {
       ))}
     </Routes>
   );
-};
+});
 
 export default AppRouting;

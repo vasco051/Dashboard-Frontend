@@ -1,0 +1,59 @@
+@import "src/assets/styles/templates";
+
+.list {
+  @include flex-gap(8px);
+}
+
+// item
+.item {
+  @extend %transition;
+  transition-property: background-color;
+
+  border-radius: 8px;
+  overflow: hidden;
+  background: transparent;
+
+  &:hover {
+    background: var(--Greyscale-50);
+  }
+}
+
+.active {
+  background: var(--Greyscale-50);
+
+  .button {
+    svg path {
+      stroke: var(--Primary-600-base);
+    }
+
+    span {
+      color: var(--Primary-600-base);
+    }
+  }
+}
+
+.button {
+  @include flex-gap(8px);
+  align-items: center;
+
+  cursor: pointer;
+  padding: 8px 12px;
+  background: inherit;
+
+  svg path {
+    @extend %transition;
+    transition-property: stroke;
+    stroke: var(--Greyscale-500);
+  }
+
+  span {
+    @extend %transition;
+    transition-property: color;
+
+    color: var(--Greyscale-500);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.2px;
+  }
+}

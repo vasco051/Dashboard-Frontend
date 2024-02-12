@@ -10,6 +10,8 @@
 
 .title {
   @extend %transition;
+  transition-property: color;
+
   color: var(--Greyscale-900);
   font-size: 16px;
   font-weight: 700;
@@ -40,6 +42,8 @@
 
     path {
       @extend %transition;
+      transition-property: stroke;
+
       stroke: var(--Greyscale-400);
     }
   }

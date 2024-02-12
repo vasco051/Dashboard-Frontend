@@ -9,10 +9,14 @@ import {Content, Footer, Header} from "./sections";
 import styles from './styles.module.scss'
 
 export const Sidebar: FC = observer(() => {
-  const {isOpen, setToggleIsOpen} = useStore().sidebarStore;
+  const store = useStore()
+  const {isOpen, setToggleIsOpen} = store.sidebarStore;
+  const {isAuth} = store.accountStore;
+
+  const isOpenSidebar = isAuth && isOpen
 
   const onClickAside = () => {
-    if (!isOpen) toggleAside()
+    if (!isOpenSidebar) toggleAside()
   }
 
   const toggleAside = (event?: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
@@ -21,7 +25,8 @@ export const Sidebar: FC = observer(() => {
   }
 
   const asideClasses = clsx(styles.aside, {
-    [styles.hidden]: !isOpen
+    [styles.hidden]: !isOpenSidebar,
+    [styles.withCursor]: !isOpenSidebar
   })
 
   return (

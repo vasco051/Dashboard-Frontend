@@ -1,13 +1,7 @@
-export type TAccount = {
-  userId: number
-  username: string;
-  updated_at: string;
-  created_at: string;
-}
-
 export type TRegistrationData = {
   username: string;
   password: string;
+  approve_password: string;
 }
 
 export type TLoginData = {

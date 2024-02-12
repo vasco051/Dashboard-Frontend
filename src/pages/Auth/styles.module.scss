@@ -1,0 +1,67 @@
+@import "src/assets/styles/templates";
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.authSection {
+  @extend %transition;
+  transition-property: background-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--Additional-white);
+}
+
+.content {
+  @include flex-col-gap(32px);
+
+  max-width: 50%;
+  width: 100%;
+
+  .header {
+    @include flex-col-gap(12px);
+  }
+
+  .title {
+    @extend %transition;
+    transition-property: color;
+
+    color: var(--Greyscale-900);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    font-size: 28px;
+    line-height: 125%;
+  }
+
+  .text {
+    @extend %transition;
+    transition-property: color;
+
+    color: var(--Greyscale-500);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+
+    a {
+      @extend %transition;
+      transition-property: color;
+
+      color: var(--Primary-600-base);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 160%;
+    }
+  }
+}
+
+.form {
+  @include flex-col-gap(16px);
+
+  .button {
+    width: 100%;
+  }
+}

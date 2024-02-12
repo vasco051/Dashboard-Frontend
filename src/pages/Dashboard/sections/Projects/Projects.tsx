@@ -1,22 +1,28 @@
-import {FC} from 'react';
+import {FC, useEffect} from 'react';
+import {observer} from "mobx-react";
 
+import {useStore} from "hooks/useStore.ts";
 import {Hr} from "components/UI/Hr";
 import {ProjectItem} from "./ProjectItem.tsx";
 
-import {projectConfig} from "data/Dashboard.ts";
-
 import styles from "./styles.module.scss";
 
-export const Projects: FC = () => {
+export const Projects: FC = observer(() => {
+  const {projects, getAll} = useStore().projectStore
+
+  useEffect(() => {
+    getAll()
+  }, []);
+
   return (
     <section className={styles.projects}>
-      <h4 className={styles.title}>Недавние проекты</h4>
+      <h4 className={styles.title}>Мои проекты</h4>
       <Hr/>
       <ul className={styles.list}>
-        {projectConfig.map(project => (
+        {projects.map(project => (
           <ProjectItem item={project} key={project.id}/>
         ))}
       </ul>
     </section>
   );
-};
+});

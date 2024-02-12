@@ -1,5 +1,7 @@
 import {FC} from 'react';
 
+import {getColorByName} from "utils/getColorByName.ts";
+
 import {TTask} from "types/entities/TTask.ts";
 
 import IcCalendar from 'assets/icons/general/ic_calendar.svg?react'
@@ -17,16 +19,20 @@ export const ListTaskItem: FC<IListTaskItemProps> = ({item}) => {
       <div className={styles.left}>
         <div className={styles.info}>
           <h4 className={styles.title}>{item.title}</h4>
-          <div className={styles.category}>
-            <div style={{background: item.category.color}} className={styles.circle}></div>
-            <span style={{color: item.category.color}}>{item.category.name}</span>
-          </div>
+
+          {!!item.tag && (
+            <div className={styles.tag}>
+              <div style={{background: getColorByName(item.tag.color_name)}} className={styles.circle}></div>
+              <span style={{color: getColorByName(item.tag.color_name)}}>{item.tag.name}</span>
+            </div>
+          )}
         </div>
 
         {!!item.description && (
           <p className={styles.description}>{item.description}</p>
         )}
       </div>
+
       <div className={styles.right}>
         <div className={styles.dateWrapper}>
           <IcCalendar className={styles.icon}/>

@@ -1,22 +1,26 @@
-import {TAccount, TLoginData, TRegistrationData} from "types/entities/TAccount.ts";
+import {APIResponse} from "types/API/TAPI.ts";
+
+import {TLoginData, TRegistrationData} from "types/entities/TAccount.ts";
+import {GetAuthResponse, GetLoginResponse, GetRegistrationResponse} from "types/API/TAccountResponse.ts";
+import {TUser} from "../entities/TUser.ts";
 
 export interface IAccountStore {
-  _account: TAccount | null;
+  _account: TUser | null;
   _isLoading: boolean;
 
   // gets
-  get account(): TAccount | null;
+  get account(): TUser | null;
   get isLoading(): boolean;
   get isAuth(): boolean;
 
   // sets
-  setAccount(account: TAccount | null): void;
+  setAccount(account: TUser | null): void;
   setIsLoading(isLoading: boolean): void;
   setToken(token: string): void;
 
   // async
-  registration(data: TRegistrationData): Promise<void>;
-  login(data: TLoginData): Promise<void>;
-  auth(): Promise<void>;
+  registration(data: TRegistrationData): APIResponse<GetRegistrationResponse>;
+  login(data: TLoginData): APIResponse<GetLoginResponse>;
+  auth(): APIResponse<GetAuthResponse>;
   logout(): void;
 }

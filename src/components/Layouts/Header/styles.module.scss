@@ -2,9 +2,10 @@
 
 .header {
   @extend %transition;
-  @include flex-col-gap(32px);
+  transition-property: background-color;
+  @include flex-col-gap(20px);
 
-  padding: 32px;
+  padding: 24px 32px;
 
   background: var(--Additional-white);
 }
@@ -17,22 +18,18 @@
   @include flex-gap(32px);
   justify-content: space-between;
   align-items: center;
-}
 
-.title {
-  @extend %transition;
-  color: var(--Greyscale-900);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 125%;
-  letter-spacing: 0.2px;
-}
+  .left {
+    display: flex;
+    align-items: center;
+    height: 48px;
 
-.description {
-  @extend %transition;
-  color: var(--Greyscale-900);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 125%;
-  letter-spacing: 0.2px;
+    .title {
+      color: var(--Greyscale-900);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0.2px;
+    }
+  }
 }

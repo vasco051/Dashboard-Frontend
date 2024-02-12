@@ -1,4 +1,5 @@
 import {FC} from 'react';
+import {useNavigate} from "react-router-dom";
 import {observer} from "mobx-react";
 import clsx from "clsx";
 
@@ -12,20 +13,28 @@ import {ThemeVariant} from "types/entities/TTheme.ts";
 
 import IcDarkMode from 'assets/icons/general/ic_dark-mode.svg?react'
 import IcLightMode from 'assets/icons/general/ic_light-mode.svg?react'
-import IcSettings from 'assets/icons/general/ic_settings.svg?react'
+import IcLogout from 'assets/icons/general/ic_logout.svg?react'
 import styles from './styles.module.scss'
 
 const Footer: FC = observer(() => {
   const store = useStore()
   const {isOpen} = store.sidebarStore;
+  const {isAuth, logout} = store.accountStore;
   const {currentTheme, setTheme} = store.themeStore;
+
+  const navigate = useNavigate()
+
+  const isOpenSidebar = isAuth && isOpen
 
   const bottomItems = {
     setting: {
       id: 1,
-      text: 'Настройки',
-      icon: <IcSettings/>,
-      link: staticLinks.settings
+      text: isAuth ? 'Выйти' : 'Войти',
+      icon: <IcLogout/>,
+      onClick: () => {
+        logout()
+        navigate(staticLinks.main)
+      }
     },
     theme: {
       id: 2,
@@ -38,15 +47,15 @@ const Footer: FC = observer(() => {
   }
 
   const listClasses = clsx(styles.list, {
-    [styles.short]: !isOpen
+    [styles.short]: !isOpenSidebar
   })
 
   return (
     <footer>
       <ul className={listClasses}>
-        <SidebarItem item={bottomItems.setting} short={!isOpen}/>
+        {isAuth && <SidebarItem item={bottomItems.setting} short={!isOpenSidebar}/>}
         <Hr/>
-        <SidebarItem item={bottomItems.theme} short={!isOpen}/>
+        <SidebarItem item={bottomItems.theme} short={!isOpenSidebar}/>
       </ul>
     </footer>
   );

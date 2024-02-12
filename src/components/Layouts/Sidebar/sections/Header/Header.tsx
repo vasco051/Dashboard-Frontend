@@ -8,7 +8,11 @@ import IcLogo from "assets/icons/general/ic_logo.svg?react";
 import styles from "./styles.module.scss";
 
 const Header: FC = observer(() => {
-  const {isOpen, setToggleIsOpen} = useStore().sidebarStore;
+  const store = useStore()
+  const {isOpen, setToggleIsOpen} = store.sidebarStore;
+  const {isAuth} = store.accountStore;
+
+  const isOpenSidebar = isAuth && isOpen
 
   const toggleAside = (event?: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
     event && event.stopPropagation()
@@ -16,7 +20,7 @@ const Header: FC = observer(() => {
   }
 
   const headerClasses = clsx(styles.header, {
-    [styles.hidden]: !isOpen
+    [styles.hidden]: !isOpenSidebar
   })
 
   return (

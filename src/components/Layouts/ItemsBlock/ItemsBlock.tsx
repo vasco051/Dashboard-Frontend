@@ -12,7 +12,11 @@ export function ItemsBlock<T>({block}: IItemsBlockProps<T>) {
   return (
     <section className={styles.block}>
       <Header block={block}/>
-      <ul className={styles.list}>{block.items.map(block.renderItem)}</ul>
+
+      {block.items.length
+        ? <ul className={styles.list}>{block.items.map(block.renderItem)}</ul>
+        : block.emptyItem
+      }
     </section>
   );
 }

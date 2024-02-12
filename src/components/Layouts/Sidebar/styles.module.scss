@@ -30,7 +30,10 @@
   width: 54px;
   padding: calc((54px - 28px) / 2);
 
-  cursor: pointer;
   overflow-y: hidden;
+}
+
+.withCursor {
+  cursor: pointer;
 }
 

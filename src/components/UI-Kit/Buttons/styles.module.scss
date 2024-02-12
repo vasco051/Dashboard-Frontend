@@ -1,0 +1,57 @@
+@import "src/assets/styles/templates";
+
+.button {
+  @extend %transition;
+  transition-property: background-color, opacity, color, border-color;
+
+  width: max-content;
+  cursor: pointer ;
+  border: 1px solid transparent;
+
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.primary {
+  color: #FFF;
+  background: var(--Primary-600-base);
+}
+
+.secondary {
+  border-color: var(--Greyscale-200);
+  background: var(--Additional-white);
+  color: var(--Greyscale-900);
+}
+
+.small {
+  padding: 5px 23px;
+  border-radius: 8px;
+
+  line-height: 20px;
+  font-size: 14px;
+ }
+
+.default {
+  padding: 11px 23px;
+  border-radius: 12px;
+
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.big {
+  padding: 15px 23px;
+  border-radius: 12px;
+
+  font-size: 16px;
+  line-height: 24px;
+}

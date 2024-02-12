@@ -1,0 +1,21 @@
+@import "src/assets/styles/templates";
+
+.userInfo {
+  @include flex-gap(10px);
+  align-items: center;
+}
+
+.icon path {
+  @extend %transition;
+  stroke: var(--Greyscale-500);
+}
+
+.title {
+  @extend %transition;
+  transition-property: color;
+
+  color: var(--Greyscale-500);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}

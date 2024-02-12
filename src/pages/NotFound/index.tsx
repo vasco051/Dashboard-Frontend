@@ -1,6 +1,9 @@
 import {FC} from 'react';
 
 import {PageWrapper} from "components/Layouts/PageWrapper";
+import {ButtonSizeVariant, ButtonThemeVariant, LinkButton} from "components/UI-Kit/Buttons";
+
+import {staticLinks} from "config/routingLinks.ts";
 
 import styles from './styles.module.scss'
 
@@ -11,9 +14,17 @@ export const NotFound: FC = () => {
         <h1 className={styles.title}>404</h1>
 
         <div className={styles.content}>
-          <h2 className={styles.subTitle}>Page Not Found</h2>
-          <p className={styles.description}>Sorry, We can’t find the page you’re looking for</p>
+          <h2 className={styles.subTitle}>Страница не найдена</h2>
+          <p className={styles.description}>Извините, мы не можем найти страницу по вашему запросу</p>
         </div>
+
+        <LinkButton
+          to={staticLinks.main}
+          size={ButtonSizeVariant.SMALL}
+          theme={ButtonThemeVariant.SECONDARY}
+        >
+          Вернуться на главную
+        </LinkButton>
       </section>
     </PageWrapper>
   );

@@ -36,24 +36,3 @@ export const menu: TBlockItem = {
     },
   ]
 }
-
-export const projects: TBlockItem = {
-  title: 'Проекты',
-  items: [
-    {
-      id: 1,
-      text: 'Дизайн сайтов',
-      color: 'var(--Additional-indigo)',
-    },
-    {
-      id: 2,
-      text: 'SEO аналитик',
-      color: 'var(--Secondary-Amber-500-base)',
-    },
-    {
-      id: 3,
-      text: 'Моё приложение',
-      color: 'var(--Additional-emerald)',
-    },
-  ]
-}

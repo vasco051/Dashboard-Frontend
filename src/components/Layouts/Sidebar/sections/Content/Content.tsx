@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from 'react';
+import {FC, useEffect} from 'react';
 import {observer} from "mobx-react";
 import clsx from "clsx";
 
@@ -6,52 +6,46 @@ import {useStore} from "hooks/useStore.ts";
 import {Hr} from "components/UI/Hr";
 import Block from "../Block/Block.tsx";
 
+import {dynamicLinks} from "config/routingLinks.ts";
 import {menu} from "data/Sidebar.tsx";
 
 import {TBlockItem} from "../Block/types.ts";
 
 import styles from "./styles.module.scss";
+import {getColorByName} from "../../../../../utils/getColorByName.ts";
 
 const Content: FC = observer(() => {
-  const {isOpen} = useStore().sidebarStore;
+  const store = useStore()
+  const {isOpen} = store.sidebarStore;
+  const {isAuth} = store.accountStore;
+
+  const isOpenSidebar = isAuth && isOpen
+
   const {projects, getAll} = useStore().projectStore;
-  const [isShowContent, setIsShowContent] = useState(isOpen)
 
   useEffect(() => {
-    if (!isOpen) {
-      setTimeout(() => {
-        !isOpen && setIsShowContent(false)
-      }, 700)
-    } else setIsShowContent(true)
-  }, [isOpen]);
-
-  useEffect(() => {
-    getAll()
-  }, []);
+    isAuth && getAll()
+  }, [isAuth]);
 
   const projectsBlock: TBlockItem = {
     title: 'Проекты',
     items: projects.map(project => ({
-      id: project.project_id,
-      link: String(project.project_id),
+      id: project.id,
+      link: dynamicLinks.project(project.id),
       text: project.name,
-      color: project.color
+      color: getColorByName(project.color_name)
     }))
   }
 
   const contentClasses = clsx(styles.content, {
-    [styles.hidden]: !isOpen
+    [styles.hidden]: !isOpenSidebar
   })
 
   return (
     <section className={contentClasses}>
-      {isShowContent && (
-        <>
-          <Block block={menu}/>
-          <Hr/>
-          <Block block={projectsBlock}/>
-        </>
-      )}
+      <Block block={menu}/>
+      <Hr/>
+      <Block block={projectsBlock}/>
     </section>
   );
 });

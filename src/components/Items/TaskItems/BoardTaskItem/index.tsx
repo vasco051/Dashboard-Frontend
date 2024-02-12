@@ -2,6 +2,8 @@ import {FC} from 'react';
 
 import {Hr} from "components/UI/Hr";
 
+import {getColorByName} from "utils/getColorByName.ts";
+
 import {TTask} from "types/entities/TTask.ts";
 
 import IcCalendar from 'assets/icons/general/ic_calendar.svg?react'
@@ -18,10 +20,13 @@ export const BoardTaskItem: FC<IBoardTaskItemProps> = ({item}) => {
     <li className={styles.item} draggable>
       <div className={styles.header}>
         <h4 className={styles.title}>{item.title}</h4>
-        <div className={styles.category}>
-          <div style={{background: item.category.color}} className={styles.circle}></div>
-          <span style={{color: item.category.color}}>{item.category.name}</span>
-        </div>
+
+        {!!item.tag && (
+          <div className={styles.tag}>
+            <div style={{background: getColorByName(item.tag.color_name)}} className={styles.circle}></div>
+            <span style={{color: getColorByName(item.tag.color_name)}}>{item.tag.name}</span>
+          </div>
+        )}
       </div>
 
       {item.description && (

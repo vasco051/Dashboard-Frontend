@@ -10,10 +10,13 @@
 
 .wrapper {
   @include flex-col-gap(32px);
+  align-items: center;
   max-width: 600px;
 }
 
 .title, .subTitle, .description {
+  @extend %transition;
+
   text-align: center;
   color: var(--Greyscale-900);
   font-weight: 700;
@@ -24,7 +27,8 @@
 }
 
 .content {
-  @include flex-col-gap(12px)
+  @include flex-col-gap(12px);
+  align-items: center;
 }
 
 .subTitle {

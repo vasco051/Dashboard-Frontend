@@ -11,10 +11,14 @@ interface IPageWrapper {
 }
 
 export const PageWrapper: FC<PropsWithChildren<IPageWrapper>> = observer(({className = '', children}) => {
-  const sidebarStore = useStore().sidebarStore
+  const store = useStore()
+  const {isOpen} = store.sidebarStore;
+  const {isAuth} = store.accountStore;
+
+  const isOpenSidebar = isAuth && isOpen
 
   const mainClasses = clsx(styles.main, {
-    [styles.hideSidebar]: !sidebarStore.isOpen,
+    [styles.hideSidebar]: !isOpenSidebar,
     [className]: !!className
   })
 

@@ -1,8 +1,10 @@
 export type TProject = {
-  project_id: number;
+  id: number;
   name: string;
-  color: string;
+  description: string | null;
+  color_name: string;
+  number_of_completed: number,
+  number_of_tasks: number
   created_at: string;
   updated_at: string;
-  user_id: number;
 }

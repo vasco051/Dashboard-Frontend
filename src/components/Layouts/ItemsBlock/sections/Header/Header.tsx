@@ -11,6 +11,8 @@ interface IHeaderProps<T> {
 export function Header<T>({block}: IHeaderProps<T>) {
   const countItems = block.items.length < 10 ? `0${block.items.length}` : block.items.length
 
+  const onAddClick = () => block.header.onAddClick && block.header.onAddClick(block)
+
   return (
     <header className={styles.header}>
       <h4 className={styles.title} style={{color: block.header.color}}>
@@ -18,7 +20,7 @@ export function Header<T>({block}: IHeaderProps<T>) {
       </h4>
 
       <div className={styles.options}>
-        <IcPlus/>
+        {!!block.header.onAddClick && <IcPlus onClick={onAddClick}/>}
         <IcDots/>
       </div>
     </header>

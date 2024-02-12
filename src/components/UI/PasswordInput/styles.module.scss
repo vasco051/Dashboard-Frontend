@@ -1,0 +1,5 @@
+.passwordInput {
+  &:not(:placeholder-shown) {
+    letter-spacing: 2px;
+  }
+}

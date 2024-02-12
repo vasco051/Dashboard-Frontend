@@ -3,11 +3,12 @@ import {makeAutoObservable} from "mobx";
 import {localStorageConst} from "config/localStorageConst.ts";
 import accountService from "API/rest/accountService.ts";
 
-import {TAccount, TLoginData, TRegistrationData} from "types/entities/TAccount.ts";
+import {TLoginData, TRegistrationData} from "types/entities/TAccount.ts";
 import {IAccountStore} from "types/stores/IAccountStore.ts";
+import {TUser} from "types/entities/TUser.ts";
 
 export class AccountStore implements IAccountStore {
-  _account: TAccount | null = null;
+  _account: TUser | null = null;
   _isLoading: boolean = false;
 
   constructor() {
@@ -30,7 +31,7 @@ export class AccountStore implements IAccountStore {
   }
 
   // sets
-  setAccount(account: TAccount | null) {
+  setAccount(account: TUser | null) {
     this._account = account;
   }
 
@@ -45,7 +46,7 @@ export class AccountStore implements IAccountStore {
   }
 
   // async
-  async registration(data: TRegistrationData) {
+  registration = async (data: TRegistrationData) => {
     this.setIsLoading(true)
     this.setAccount(null)
 
@@ -57,9 +58,10 @@ export class AccountStore implements IAccountStore {
     }
 
     this.setIsLoading(false)
+    return response
   }
 
-  async login(data: TLoginData) {
+  login = async (data: TLoginData) => {
     this.setIsLoading(true)
     this.setAccount(null)
 
@@ -71,21 +73,25 @@ export class AccountStore implements IAccountStore {
     }
 
     this.setIsLoading(false)
+    return response
   }
 
-  async auth() {
+  auth = async () => {
     this.setIsLoading(true)
 
     const response = await accountService.auth()
 
     if ('data' in response) {
       this.setAccount(response.data.user)
+    } else if ('errors' in response) {
+      this.setToken(null)
     }
 
     this.setIsLoading(false)
+    return response
   }
 
-  logout() {
+  logout = () => {
     this.setAccount(null)
     this.setToken(null)
   }

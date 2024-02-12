@@ -1,15 +1,15 @@
-import {TAccount} from "types/entities/TAccount.ts";
+import {TUser} from "types/entities/TUser.ts";
 
 export type GetRegistrationResponse = {
   token: string;
-  user: TAccount;
+  user: TUser;
 }
 
 export type GetLoginResponse = {
   token: string;
-  user: TAccount;
+  user: TUser;
 }
 
 export type GetAuthResponse = {
-  user: TAccount;
+  user: TUser;
 }

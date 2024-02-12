@@ -1,0 +1,1 @@
+export const getColorByName = (color: string) => `var(--${color})`

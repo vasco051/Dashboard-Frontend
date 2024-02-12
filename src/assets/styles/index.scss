@@ -18,6 +18,9 @@ html, body{
   display: flex;
 
   @extend %transition;
+  transition-property: background-color;
+
+
   background: var(--App-bg);
 }
 

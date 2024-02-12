@@ -9,7 +9,7 @@ export type APIResponse<Type> = Promise<AxiosResponse<Type> | APIError>;
 
 export type APIError = {
   errors: {
-    [key: string]: string[];
+    [key: string]: string;
   };
   status: number;
 };
