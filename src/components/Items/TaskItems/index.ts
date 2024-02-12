@@ -1,4 +1,4 @@
-import {ListTaskItem} from './ListTaskItem'
-import {BoardTaskItem} from "./BoardTaskItem";
+import { ListTaskItem } from './ListTaskItem'
+import { BoardTaskItem } from "./BoardTaskItem";
 
-export {ListTaskItem, BoardTaskItem}
+export { ListTaskItem, BoardTaskItem }

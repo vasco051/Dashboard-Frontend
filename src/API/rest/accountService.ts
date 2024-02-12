@@ -1,8 +1,8 @@
 import makeRequest from "API/makeRequest.ts";
 
-import {TLoginData, TRegistrationData} from "types/entities/TAccount.ts";
+import { TLoginData, TRegistrationData } from "types/entities/TAccount.ts";
 
-import {GetAuthResponse, GetLoginResponse, GetRegistrationResponse} from "types/API/TAccountResponse.ts";
+import { GetAuthResponse, GetLoginResponse, GetRegistrationResponse } from "types/API/TAccountResponse.ts";
 
 class AccountService {
   async registration(data: TRegistrationData) {

@@ -1,17 +1,17 @@
-import {FC} from "react";
-import {observer} from "mobx-react";
+import { FC } from "react";
+import { observer } from "mobx-react";
 
-import {useStore} from "hooks/useStore.ts";
-import {List} from "components/UI/List";
-import {ListTaskItem} from "components/Items/TaskItems";
+import { useStore } from "hooks/useStore.ts";
+import { List } from "components/UI/List";
+import { ListTaskItem } from "components/Items/TaskItems";
 
-import {getColorByName} from "utils/getColorByName.ts";
+import { getColorByName } from "utils/getColorByName.ts";
 
-import {TBlockItem} from "components/Layouts/ItemsBlock";
-import {TTask} from "types/entities/TTask.ts";
+import { TBlockItem } from "components/Layouts/ItemsBlock";
+import { TTask } from "types/entities/TTask.ts";
 
 export const ListSection: FC = observer(() => {
-  const {spheres} = useStore().taskStore
+  const { spheres } = useStore().taskStore
 
   const blocks: TBlockItem<TTask>[] = spheres.map(sphere => {
     return {

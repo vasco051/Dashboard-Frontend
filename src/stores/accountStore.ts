@@ -1,11 +1,11 @@
-import {makeAutoObservable} from "mobx";
+import { makeAutoObservable } from "mobx";
 
-import {localStorageConst} from "config/localStorageConst.ts";
+import { localStorageConst } from "config/localStorageConst.ts";
 import accountService from "API/rest/accountService.ts";
 
-import {TLoginData, TRegistrationData} from "types/entities/TAccount.ts";
-import {IAccountStore} from "types/stores/IAccountStore.ts";
-import {TUser} from "types/entities/TUser.ts";
+import { TLoginData, TRegistrationData } from "types/entities/TAccount.ts";
+import { IAccountStore } from "types/stores/IAccountStore.ts";
+import { TUser } from "types/entities/TUser.ts";
 
 export class AccountStore implements IAccountStore {
   _account: TUser | null = null;

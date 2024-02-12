@@ -1,9 +1,9 @@
-import {makeAutoObservable} from "mobx";
+import { makeAutoObservable } from "mobx";
 
-import {localStorageConst} from "config/localStorageConst.ts";
+import { localStorageConst } from "config/localStorageConst.ts";
 
-import {ThemeVariant} from "types/entities/TTheme.ts";
-import {IThemeStore} from "types/stores/IThemeStore.ts";
+import { ThemeVariant } from "types/entities/TTheme.ts";
+import { IThemeStore } from "types/stores/IThemeStore.ts";
 
 export class ThemeStore implements IThemeStore {
   _currentTheme: ThemeVariant = ThemeVariant.LIGHT;

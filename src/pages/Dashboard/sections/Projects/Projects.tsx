@@ -1,14 +1,14 @@
-import {FC, useEffect} from 'react';
-import {observer} from "mobx-react";
+import { FC, useEffect } from 'react';
+import { observer } from "mobx-react";
 
-import {useStore} from "hooks/useStore.ts";
-import {Hr} from "components/UI/Hr";
-import {ProjectItem} from "./ProjectItem.tsx";
+import { useStore } from "hooks/useStore.ts";
+import { Hr } from "components/UI/Hr";
+import { ProjectItem } from "./ProjectItem.tsx";
 
 import styles from "./styles.module.scss";
 
 export const Projects: FC = observer(() => {
-  const {projects, getAll} = useStore().projectStore
+  const { projects, getAll } = useStore().projectStore
 
   useEffect(() => {
     getAll()

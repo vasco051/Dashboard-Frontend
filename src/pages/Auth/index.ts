@@ -1,4 +1,4 @@
-import {Authorization} from "./Authorization.tsx";
-import {Registration} from "./Registration.tsx";
+import { Authorization } from "./Authorization.tsx";
+import { Registration } from "./Registration.tsx";
 
-export {Authorization, Registration}
+export { Authorization, Registration }

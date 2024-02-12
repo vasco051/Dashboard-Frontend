@@ -1,10 +1,10 @@
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 
 export enum ProjectTabVariant {
-    LIST = 'list',
-    BOARD = 'board',
+  LIST = 'list',
+  BOARD = 'board',
 }
 
 export type TProjectTabContent = {
-    [key in ProjectTabVariant]: ReactNode
+  [key in ProjectTabVariant]: ReactNode
 }

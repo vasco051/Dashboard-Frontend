@@ -1,23 +1,23 @@
-import {FC} from 'react';
-import {Link, useNavigate} from "react-router-dom";
-import {useFormik} from "formik";
+import { FC } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
 
-import {useStore} from "hooks/useStore.ts";
-import {PageWrapper} from "components/Layouts/PageWrapper";
-import {Button, ButtonSizeVariant} from "components/UI-Kit/Buttons";
-import {PasswordInput} from "components/UI/PasswordInput";
-import {Input} from "components/UI-Kit/Inputs";
-import {Intro} from "./sections/Intro";
+import { useStore } from "hooks/useStore.ts";
+import { PageWrapper } from "components/Layouts/PageWrapper";
+import { Button, ButtonSizeVariant } from "components/UI-Kit/Buttons";
+import { PasswordInput } from "components/UI/PasswordInput";
+import { Input } from "components/UI-Kit/Inputs";
+import { Intro } from "./sections/Intro";
 
-import {staticLinks} from "config/routingLinks.ts";
+import { staticLinks } from "config/routingLinks.ts";
 
-import {TRegistrationData} from "types/entities/TAccount.ts";
+import { TRegistrationData } from "types/entities/TAccount.ts";
 
 import IcUser from 'assets/icons/general/ic_user.svg?react'
 import styles from './styles.module.scss'
 
 export const Registration: FC = () => {
-  const {registration} = useStore().accountStore
+  const { registration } = useStore().accountStore
   const navigate = useNavigate()
 
   const formik = useFormik({

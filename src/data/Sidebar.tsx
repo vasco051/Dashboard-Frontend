@@ -1,6 +1,6 @@
-import {TBlockItem} from "components/Layouts/Sidebar/sections/Block/types.ts";
+import { TBlockItem } from "components/Layouts/Sidebar/sections/Block/types.ts";
 
-import {staticLinks} from "config/routingLinks.ts";
+import { staticLinks } from "config/routingLinks.ts";
 
 import IcDashboard from 'assets/icons/sidebar/ic_dashboard.svg?react'
 import IcCompleted from 'assets/icons/sidebar/ic_completed.svg?react'

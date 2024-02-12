@@ -1,7 +1,7 @@
-import {makeAutoObservable, observable, ObservableMap, values} from "mobx";
+import { makeAutoObservable, observable, ObservableMap, values } from "mobx";
 
-import {TProject} from "types/entities/TProject.ts";
-import {IProjectStore} from "types/stores/IProjectStore.ts";
+import { TProject } from "types/entities/TProject.ts";
+import { IProjectStore } from "types/stores/IProjectStore.ts";
 import projectService from "../API/rest/projectService.ts";
 
 export class ProjectStore implements IProjectStore {

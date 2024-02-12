@@ -1,16 +1,16 @@
-import {FC, MouseEvent} from 'react';
-import {observer} from "mobx-react";
+import { FC, MouseEvent } from 'react';
+import { observer } from "mobx-react";
 import clsx from "clsx";
 
-import {useStore} from "hooks/useStore.ts";
+import { useStore } from "hooks/useStore.ts";
 
 import IcLogo from "assets/icons/general/ic_logo.svg?react";
 import styles from "./styles.module.scss";
 
 const Header: FC = observer(() => {
   const store = useStore()
-  const {isOpen, setToggleIsOpen} = store.sidebarStore;
-  const {isAuth} = store.accountStore;
+  const { isOpen, setToggleIsOpen } = store.sidebarStore;
+  const { isAuth } = store.accountStore;
 
   const isOpenSidebar = isAuth && isOpen
 

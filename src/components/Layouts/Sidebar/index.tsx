@@ -1,17 +1,17 @@
-import {FC, MouseEvent} from 'react';
-import {observer} from "mobx-react";
+import { FC, MouseEvent } from 'react';
+import { observer } from "mobx-react";
 import clsx from "clsx";
 
-import {useStore} from "hooks/useStore.ts";
-import {Hr} from "components/UI/Hr";
-import {Content, Footer, Header} from "./sections";
+import { useStore } from "hooks/useStore.ts";
+import { Hr } from "components/UI/Hr";
+import { Content, Footer, Header } from "./sections";
 
 import styles from './styles.module.scss'
 
 export const Sidebar: FC = observer(() => {
   const store = useStore()
-  const {isOpen, setToggleIsOpen} = store.sidebarStore;
-  const {isAuth} = store.accountStore;
+  const { isOpen, setToggleIsOpen } = store.sidebarStore;
+  const { isAuth } = store.accountStore;
 
   const isOpenSidebar = isAuth && isOpen
 

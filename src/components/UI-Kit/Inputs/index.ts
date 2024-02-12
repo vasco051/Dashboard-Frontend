@@ -1,4 +1,4 @@
-import {Input, IInputProps} from './Input.tsx'
+import { Input, IInputProps } from './Input.tsx'
 
-export {Input}
+export { Input }
 export type { IInputProps }

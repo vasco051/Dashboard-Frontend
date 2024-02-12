@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
 import ImIntro from 'assets/images/auth/img_intro.png'
 

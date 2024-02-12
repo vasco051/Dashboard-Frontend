@@ -1,16 +1,17 @@
-import {FC, useState} from "react";
+import { FC, useState } from "react";
 import clsx from "clsx";
 
-import {Input, IInputProps} from "components/UI-Kit/Inputs";
+import { Input, IInputProps } from "components/UI-Kit/Inputs";
 
 import IcLock from 'assets/icons/general/ic_lock.svg?react'
 import IcEye from 'assets/icons/general/ic_eye.svg?react'
 import IcEyeOff from 'assets/icons/general/ic_eye-off.svg?react'
 import styles from './styles.module.scss'
 
-interface IPasswordInput extends IInputProps {}
+interface IPasswordInput extends IInputProps {
+}
 
-export const PasswordInput: FC<IPasswordInput> = ({className = '', ...props}) => {
+export const PasswordInput: FC<IPasswordInput> = ({ className = '', ...props }) => {
   const [isShowPassword, setIsShowPassword] = useState(false)
 
   const toggleIsShowPassword = () => setIsShowPassword(prev => !prev)

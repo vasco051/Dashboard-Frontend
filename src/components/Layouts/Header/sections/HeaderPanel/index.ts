@@ -1,3 +1,3 @@
-import {HeaderPanel} from "./HeaderPanel.tsx";
+import { HeaderPanel } from "./HeaderPanel.tsx";
 
-export {HeaderPanel}
+export { HeaderPanel }

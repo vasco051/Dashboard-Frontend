@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-import {staticLinks} from 'config/routingLinks.ts';
-import {localStorageConst} from "config/localStorageConst.ts";
+import { staticLinks } from 'config/routingLinks.ts';
+import { localStorageConst } from "config/localStorageConst.ts";
 
-import {APIResponse, TMakeRequestParams} from 'types/API/TAPI.ts';
+import { APIResponse, TMakeRequestParams } from 'types/API/TAPI.ts';
 
 const makeRequest = <Type>({
                              url = '/',
@@ -22,7 +22,7 @@ const makeRequest = <Type>({
   }
 
   return axios
-    .request<Type>({url, method, headers, params, data, responseType})
+    .request<Type>({ url, method, headers, params, data, responseType })
     .catch((errors) => {
       const responseErrors = errors.response?.data?.errors;
       const status = errors?.response?.status as number;
@@ -31,7 +31,7 @@ const makeRequest = <Type>({
         window.location.pathname = staticLinks.notFound;
       }
 
-      return {errors: responseErrors, status};
+      return { errors: responseErrors, status };
     });
 };
 

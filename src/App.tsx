@@ -1,11 +1,11 @@
-import {FC} from 'react';
-import {BrowserRouter} from "react-router-dom";
+import { FC } from 'react';
+import { BrowserRouter } from "react-router-dom";
 
-import {AppRouting} from "routing";
-import {StoreProvider} from "components/Logic/StoreProvider";
-import {Sidebar} from "components/Layouts/Sidebar";
+import { AppRouting } from "routing";
+import { StoreProvider } from "components/Logic/StoreProvider";
+import { Sidebar } from "components/Layouts/Sidebar";
 
-import {staticLinks} from "config/routingLinks.ts";
+import { staticLinks } from "config/routingLinks.ts";
 
 const App: FC = () => {
   return (

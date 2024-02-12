@@ -1,7 +1,7 @@
-import {makeAutoObservable} from 'mobx'
+import { makeAutoObservable } from 'mobx'
 
-import {ISidebarStore} from "types/stores/ISidebarStore.ts";
-import {localStorageConst} from "../config/localStorageConst.ts";
+import { ISidebarStore } from "types/stores/ISidebarStore.ts";
+import { localStorageConst } from "../config/localStorageConst.ts";
 
 export class SidebarStore implements ISidebarStore {
   _isOpen: boolean = true;

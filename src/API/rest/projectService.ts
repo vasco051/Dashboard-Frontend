@@ -1,6 +1,6 @@
 import makeRequest from "API/makeRequest.ts";
 
-import {GetProjectResponse, GetProjectsResponse} from "types/API/TProjectResponse.ts";
+import { GetProjectResponse, GetProjectsResponse } from "types/API/TProjectResponse.ts";
 
 class ProjectService {
   async getAll() {

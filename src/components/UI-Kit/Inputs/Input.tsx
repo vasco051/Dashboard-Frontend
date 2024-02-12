@@ -1,4 +1,4 @@
-import {FC, InputHTMLAttributes, ReactNode} from 'react';
+import { FC, InputHTMLAttributes, ReactNode } from 'react';
 
 import styles from './styles.module.scss'
 import clsx from "clsx";
@@ -9,7 +9,7 @@ export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   rightIcon?: ReactNode
 }
 
-export const Input: FC<IInputProps> = ({className = '', error, leftIcon, rightIcon, ...props}) => {
+export const Input: FC<IInputProps> = ({ className = '', error, leftIcon, rightIcon, ...props }) => {
   const inputClasses = clsx(styles.input, {
     [className]: !!className,
     [styles.hasLeftSlot]: !!leftIcon,

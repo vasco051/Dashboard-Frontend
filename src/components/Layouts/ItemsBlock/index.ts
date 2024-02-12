@@ -1,5 +1,5 @@
-import {ItemsBlock} from "./ItemsBlock.tsx";
-import {TBlockItem} from './types.ts'
+import { ItemsBlock } from "./ItemsBlock.tsx";
+import { TBlockItem } from './types.ts'
 
-export {ItemsBlock};
+export { ItemsBlock };
 export type { TBlockItem };

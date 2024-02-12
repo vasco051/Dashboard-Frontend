@@ -1,13 +1,13 @@
-import {FC} from 'react';
-import {observer} from "mobx-react";
+import { FC } from 'react';
+import { observer } from "mobx-react";
 
-import {useStore} from "hooks/useStore.ts";
+import { useStore } from "hooks/useStore.ts";
 
 import IcUser from 'assets/icons/general/ic_user.svg?react'
 import styles from './styles.module.scss'
 
 export const UserInfo: FC = observer(() => {
-  const {isAuth, account} = useStore().accountStore
+  const { isAuth, account } = useStore().accountStore
 
   if (!isAuth) return null
 

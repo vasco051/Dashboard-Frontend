@@ -1,11 +1,11 @@
-import {FC} from "react";
-import {Link} from "react-router-dom";
+import { FC } from "react";
+import { Link } from "react-router-dom";
 
-import {getProgressColor} from "utils/getProgressColor.ts";
+import { getProgressColor } from "utils/getProgressColor.ts";
 
-import {dynamicLinks} from "config/routingLinks.ts";
+import { dynamicLinks } from "config/routingLinks.ts";
 
-import {TProject} from "types/entities/TProject.ts";
+import { TProject } from "types/entities/TProject.ts";
 
 import styles from './styles.module.scss'
 
@@ -13,7 +13,7 @@ interface IProjectItemProps {
   item: TProject
 }
 
-export const ProjectItem: FC<IProjectItemProps> = ({item}) => {
+export const ProjectItem: FC<IProjectItemProps> = ({ item }) => {
   const progress = parseInt((item.number_of_completed / item.number_of_tasks * 100).toFixed(0))
 
   const hasTasks = item.number_of_tasks > 0

@@ -1,4 +1,4 @@
-import {ItemsBlock, TBlockItem} from "components/Layouts/ItemsBlock";
+import { ItemsBlock, TBlockItem } from "components/Layouts/ItemsBlock";
 
 import styles from "./styles.module.scss";
 
@@ -6,7 +6,7 @@ interface IBoardProps<T> {
   blocks: TBlockItem<T>[]
 }
 
-export function Board<T>({blocks}: IBoardProps<T>) {
+export function Board<T>({ blocks }: IBoardProps<T>) {
   return (
     <section className={styles.wrapper}>
       <div className={styles.board}>

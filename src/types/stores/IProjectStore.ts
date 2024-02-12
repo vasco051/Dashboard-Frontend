@@ -1,9 +1,9 @@
-import {ObservableMap} from "mobx";
+import { ObservableMap } from "mobx";
 
-import {APIResponse} from "types/API/TAPI.ts";
+import { APIResponse } from "types/API/TAPI.ts";
 
-import {TProject} from "types/entities/TProject.ts";
-import {GetProjectResponse, GetProjectsResponse} from "types/API/TProjectResponse.ts";
+import { TProject } from "types/entities/TProject.ts";
+import { GetProjectResponse, GetProjectsResponse } from "types/API/TProjectResponse.ts";
 
 export interface IProjectStore {
   _projects: ObservableMap<number, TProject>;

@@ -1,9 +1,9 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
-import {PageWrapper} from "components/Layouts/PageWrapper";
-import {ButtonSizeVariant, ButtonThemeVariant, LinkButton} from "components/UI-Kit/Buttons";
+import { PageWrapper } from "components/Layouts/PageWrapper";
+import { ButtonSizeVariant, ButtonThemeVariant, LinkButton } from "components/UI-Kit/Buttons";
 
-import {staticLinks} from "config/routingLinks.ts";
+import { staticLinks } from "config/routingLinks.ts";
 
 import styles from './styles.module.scss'
 

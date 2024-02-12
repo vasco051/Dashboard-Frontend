@@ -1,6 +1,6 @@
-import {useContext} from "react";
+import { useContext } from "react";
 
-import {Context} from "components/Logic/StoreProvider";
+import { Context } from "components/Logic/StoreProvider";
 
 export const useStore = () => {
   const context = useContext(Context);

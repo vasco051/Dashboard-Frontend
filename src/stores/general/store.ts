@@ -1,16 +1,16 @@
-import {makeAutoObservable} from "mobx";
+import { makeAutoObservable } from "mobx";
 
-import {AccountStore} from "stores/accountStore.ts";
-import {ThemeStore} from "stores/themeStore.ts";
-import {SidebarStore} from "stores/sidebarStore.ts";
-import {TaskStore} from "stores/taskStore.ts";
-import {ProjectStore} from "stores/projectStore.ts";
+import { AccountStore } from "stores/accountStore.ts";
+import { ThemeStore } from "stores/themeStore.ts";
+import { SidebarStore } from "stores/sidebarStore.ts";
+import { TaskStore } from "stores/taskStore.ts";
+import { ProjectStore } from "stores/projectStore.ts";
 
-import {IAccountStore} from "types/stores/IAccountStore.ts";
-import {IThemeStore} from "types/stores/IThemeStore.ts";
-import {ISidebarStore} from "types/stores/ISidebarStore.ts";
-import {ITasksStore} from "types/stores/ITasksStore.ts";
-import {IProjectStore} from "types/stores/IProjectStore.ts";
+import { IAccountStore } from "types/stores/IAccountStore.ts";
+import { IThemeStore } from "types/stores/IThemeStore.ts";
+import { ISidebarStore } from "types/stores/ISidebarStore.ts";
+import { ITasksStore } from "types/stores/ITasksStore.ts";
+import { IProjectStore } from "types/stores/IProjectStore.ts";
 
 export class Store {
   accountStore: IAccountStore;

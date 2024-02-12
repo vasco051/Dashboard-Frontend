@@ -1,8 +1,8 @@
-import {APIResponse} from "types/API/TAPI.ts";
+import { APIResponse } from "types/API/TAPI.ts";
 
-import {TLoginData, TRegistrationData} from "types/entities/TAccount.ts";
-import {GetAuthResponse, GetLoginResponse, GetRegistrationResponse} from "types/API/TAccountResponse.ts";
-import {TUser} from "../entities/TUser.ts";
+import { TLoginData, TRegistrationData } from "types/entities/TAccount.ts";
+import { GetAuthResponse, GetLoginResponse, GetRegistrationResponse } from "types/API/TAccountResponse.ts";
+import { TUser } from "../entities/TUser.ts";
 
 export interface IAccountStore {
   _account: TUser | null;

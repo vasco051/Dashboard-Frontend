@@ -1,9 +1,9 @@
-import {makeAutoObservable, observable, ObservableMap, values} from "mobx";
+import { makeAutoObservable, observable, ObservableMap, values } from "mobx";
 
 import TaskService from "API/rest/taskService.ts";
 
-import {ITasksStore} from "types/stores/ITasksStore.ts";
-import {TTaskSphere} from "types/entities/TTask.ts";
+import { ITasksStore } from "types/stores/ITasksStore.ts";
+import { TTaskSphere } from "types/entities/TTask.ts";
 
 export class TaskStore implements ITasksStore {
   _spheres: ObservableMap<number, TTaskSphere> = observable.map()

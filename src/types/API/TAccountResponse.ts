@@ -1,4 +1,4 @@
-import {TUser} from "types/entities/TUser.ts";
+import { TUser } from "types/entities/TUser.ts";
 
 export type GetRegistrationResponse = {
   token: string;

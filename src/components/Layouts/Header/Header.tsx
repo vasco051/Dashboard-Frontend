@@ -1,10 +1,10 @@
-import {Hr} from "components/UI/Hr";
-import {HeaderPanel} from "./sections/HeaderPanel";
-import {HeaderProject} from "./sections/HeaderProject";
-import {UserInfo} from "./sections/UserInfo";
+import { Hr } from "components/UI/Hr";
+import { HeaderPanel } from "./sections/HeaderPanel";
+import { HeaderProject } from "./sections/HeaderProject";
+import { UserInfo } from "./sections/UserInfo";
 
-import {TPanelInfo} from "./sections/HeaderPanel/types.ts";
-import {TProjectInfo} from "./sections/HeaderProject/types.ts";
+import { TPanelInfo } from "./sections/HeaderPanel/types.ts";
+import { TProjectInfo } from "./sections/HeaderProject/types.ts";
 
 import styles from './styles.module.scss'
 
@@ -14,7 +14,7 @@ interface IHeaderProps<T> {
   panelInfo?: TPanelInfo<T>;
 }
 
-export function Header<T>({title, panelInfo, projectInfo}: IHeaderProps<T>) {
+export function Header<T>({ title, panelInfo, projectInfo }: IHeaderProps<T>) {
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>

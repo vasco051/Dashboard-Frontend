@@ -1,4 +1,4 @@
-import {TProject} from "types/entities/TProject.ts";
+import { TProject } from "types/entities/TProject.ts";
 
 export type TProjectInfo = {
   isLoading: boolean;

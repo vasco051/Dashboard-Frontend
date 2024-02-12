@@ -1,13 +1,13 @@
-import {FC, useLayoutEffect, useState} from 'react';
-import {useSearchParams} from "react-router-dom";
+import { FC, useLayoutEffect, useState } from 'react';
+import { useSearchParams } from "react-router-dom";
 
-import {PageWrapper} from "components/Layouts/PageWrapper";
-import {Header} from "components/Layouts/Header/Header.tsx";
-import {List} from "components/UI/List";
-import {Board} from "components/UI/Board";
+import { PageWrapper } from "components/Layouts/PageWrapper";
+import { Header } from "components/Layouts/Header/Header.tsx";
+import { List } from "components/UI/List";
+import { Board } from "components/UI/Board";
 
-import {TPanelInfo} from "components/Layouts/Header";
-import {TasksTabVariant, TTasksTabContent} from "./types.ts";
+import { TPanelInfo } from "components/Layouts/Header";
+import { TasksTabVariant, TTasksTabContent } from "./types.ts";
 
 import styles from './styles.module.scss'
 

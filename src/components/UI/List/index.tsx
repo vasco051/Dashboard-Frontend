@@ -1,4 +1,4 @@
-import {ItemsBlock, TBlockItem} from "components/Layouts/ItemsBlock";
+import { ItemsBlock, TBlockItem } from "components/Layouts/ItemsBlock";
 
 import styles from './styles.module.scss'
 
@@ -6,7 +6,7 @@ interface IListProps<T> {
   blocks: TBlockItem<T>[]
 }
 
-export function List<T>({blocks}: IListProps<T>){
+export function List<T>({ blocks }: IListProps<T>) {
   return (
     <section className={styles.list}>
       {blocks.map((block, index) => (

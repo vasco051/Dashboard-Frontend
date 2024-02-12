@@ -1,8 +1,8 @@
-import {FC} from "react";
+import { FC } from "react";
 
-import {getColorByName} from "utils/getColorByName.ts";
+import { getColorByName } from "utils/getColorByName.ts";
 
-import {TProjectInfo} from "./types.ts";
+import { TProjectInfo } from "./types.ts";
 
 import styles from './styles.module.scss'
 
@@ -10,8 +10,8 @@ interface IHeaderProjectProps {
   info: TProjectInfo
 }
 
-export const HeaderProject: FC<IHeaderProjectProps> = ({info}) => {
-  const iconStyles = {background: getColorByName(info.project?.color_name ?? '')}
+export const HeaderProject: FC<IHeaderProjectProps> = ({ info }) => {
+  const iconStyles = { background: getColorByName(info.project?.color_name ?? '') }
 
   return (
     <section className={styles.projectInfo}>

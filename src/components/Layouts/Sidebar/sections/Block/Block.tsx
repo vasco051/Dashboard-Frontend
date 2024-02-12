@@ -1,8 +1,8 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
 import SidebarItem from "../SidebarItem/SidebarItem.tsx";
 
-import {TBlockItem} from "./types.ts";
+import { TBlockItem } from "./types.ts";
 
 import styles from './styles.module.scss'
 
@@ -10,7 +10,7 @@ interface IBlockProps {
   block: TBlockItem
 }
 
-const  Block: FC<IBlockProps> = ({block}) => {
+const Block: FC<IBlockProps> = ({ block }) => {
   return (
     <section className={styles.block}>
       <h4 className={styles.title}>{block.title}</h4>

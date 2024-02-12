@@ -1,7 +1,7 @@
-import {ButtonHTMLAttributes, FC, PropsWithChildren} from 'react';
+import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 import clsx from "clsx";
 
-import {ButtonSizeVariant, ButtonThemeVariant} from "./types.ts";
+import { ButtonSizeVariant, ButtonThemeVariant } from "./types.ts";
 
 import styles from './styles.module.scss'
 

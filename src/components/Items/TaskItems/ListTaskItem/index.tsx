@@ -1,8 +1,8 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
-import {getColorByName} from "utils/getColorByName.ts";
+import { getColorByName } from "utils/getColorByName.ts";
 
-import {TTask} from "types/entities/TTask.ts";
+import { TTask } from "types/entities/TTask.ts";
 
 import IcCalendar from 'assets/icons/general/ic_calendar.svg?react'
 import styles from './styles.module.scss'
@@ -11,7 +11,7 @@ interface IListTaskItemProps {
   item: TTask;
 }
 
-export const ListTaskItem: FC<IListTaskItemProps> = ({item}) => {
+export const ListTaskItem: FC<IListTaskItemProps> = ({ item }) => {
   const finishDate = new Date().toDateString()
 
   return (
@@ -22,8 +22,8 @@ export const ListTaskItem: FC<IListTaskItemProps> = ({item}) => {
 
           {!!item.tag && (
             <div className={styles.tag}>
-              <div style={{background: getColorByName(item.tag.color_name)}} className={styles.circle}></div>
-              <span style={{color: getColorByName(item.tag.color_name)}}>{item.tag.name}</span>
+              <div style={{ background: getColorByName(item.tag.color_name) }} className={styles.circle}></div>
+              <span style={{ color: getColorByName(item.tag.color_name) }}>{item.tag.name}</span>
             </div>
           )}
         </div>

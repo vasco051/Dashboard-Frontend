@@ -1,4 +1,4 @@
-import {Projects} from "./Projects.tsx";
-import {ProjectItem} from "./ProjectItem.tsx";
+import { Projects } from "./Projects.tsx";
+import { ProjectItem } from "./ProjectItem.tsx";
 
-export {Projects, ProjectItem}
+export { Projects, ProjectItem }

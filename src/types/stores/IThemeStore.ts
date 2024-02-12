@@ -1,4 +1,4 @@
-import {ThemeVariant} from "../entities/TTheme.ts";
+import { ThemeVariant } from "../entities/TTheme.ts";
 
 export interface IThemeStore {
   _currentTheme: ThemeVariant;

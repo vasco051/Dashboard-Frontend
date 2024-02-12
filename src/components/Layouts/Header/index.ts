@@ -1,4 +1,4 @@
-import {TPanelInfo} from "./sections/HeaderPanel/types.ts";
-import {TProjectInfo} from "./sections/HeaderProject/types.ts";
+import { TPanelInfo } from "./sections/HeaderPanel/types.ts";
+import { TProjectInfo } from "./sections/HeaderProject/types.ts";
 
-export type {TPanelInfo, TProjectInfo}
+export type { TPanelInfo, TProjectInfo }
