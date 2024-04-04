@@ -1,7 +1,7 @@
-import { TTask, TTaskSphere } from "types/entities/TTask.ts";
+import { TTask } from "types/entities/TTask.ts";
 
 export type GetTasksResponse = {
-  spheres: TTaskSphere[]
+  tasks: TTask[]
 }
 
 export type GetTaskResponse = {

@@ -10,11 +10,14 @@ import IcCalendar from 'assets/icons/general/ic_calendar.svg?react'
 import styles from './styles.module.scss'
 
 interface IBoardTaskItemProps {
-  item: TTask
+  item: TTask;
+  onRemoveItem?: (sphereId: number, taskId: number) => void
 }
 
-export const BoardTaskItem: FC<IBoardTaskItemProps> = ({ item }) => {
+export const BoardTaskItem: FC<IBoardTaskItemProps> = ({item, onRemoveItem}) => {
   const finishDate = new Date().toDateString()
+
+  const onClickRemoveItem = () => onRemoveItem && onRemoveItem(item.status_id, item.id)
 
   return (
     <li className={styles.item} draggable>
@@ -23,21 +26,23 @@ export const BoardTaskItem: FC<IBoardTaskItemProps> = ({ item }) => {
 
         {!!item.tag && (
           <div className={styles.tag}>
-            <div style={{ background: getColorByName(item.tag.color_name) }} className={styles.circle}></div>
-            <span style={{ color: getColorByName(item.tag.color_name) }}>{item.tag.name}</span>
+            <div style={{background: getColorByName(item.tag.color_name)}} className={styles.circle}></div>
+            <span style={{color: getColorByName(item.tag.color_name)}}>{item.tag.name}</span>
           </div>
         )}
       </div>
 
-      {item.description && (
-        <p className={styles.description}>{item.description}</p>
-      )}
+      {item.description && <p className={styles.description}>{item.description}</p>}
 
       <Hr/>
 
-      <div className={styles.dateWrapper}>
-        <IcCalendar className={styles.icon}/>
-        <span className={styles.date}>{finishDate}</span>
+      <div className={styles.bottom}>
+        <div className={styles.dateWrapper}>
+          <IcCalendar className={styles.icon}/>
+          <span className={styles.date}>{finishDate}</span>
+        </div>
+
+        <div className={styles.options} onClick={onClickRemoveItem}>Уд.</div>
       </div>
     </li>
   );

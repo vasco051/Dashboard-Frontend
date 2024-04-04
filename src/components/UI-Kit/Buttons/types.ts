@@ -6,5 +6,6 @@ export enum ButtonSizeVariant {
 
 export enum ButtonThemeVariant {
   PRIMARY = 'primary',
-  SECONDARY = 'secondary'
+  SECONDARY = 'secondary',
+  DANGER = 'danger'
 }

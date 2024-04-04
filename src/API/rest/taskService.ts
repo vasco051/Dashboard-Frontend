@@ -1,29 +1,23 @@
 import makeRequest from "API/makeRequest.ts";
 
 import { TTaskCreate } from "types/entities/TTask.ts";
-import { GetTaskResponse, GetTasksResponse } from "types/API/TTaskResponse.ts";
+import { GetTaskResponse } from "types/API/TTaskResponse.ts";
 
 class TaskService {
-  async getAll(projectId: number) {
-    return await makeRequest<GetTasksResponse>({
-      url: `api/projects/${projectId}/tasks`,
-      hasAuthToken: true
-    })
-  }
-
-  async getOne(projectId: number, taskId: number) {
+  async create(projectId: number, sphereId: number, task: TTaskCreate) {
     return await makeRequest<GetTaskResponse>({
-      url: `api/projects/${projectId}/tasks/${taskId}`,
-      hasAuthToken: true
-    })
-  }
-
-  async create(projectId: number, task: TTaskCreate) {
-    return await makeRequest<GetTaskResponse>({
-      url: `api/projects/${projectId}/tasks`,
+      url: `api/projects/${projectId}/spheres/${sphereId}/tasks`,
       method: 'post',
       hasAuthToken: true,
       data: task
+    })
+  }
+
+  async delete(projectId: number, sphereId: number, taskId: number) {
+    return await makeRequest<never>({
+      url: `api/projects/${projectId}/spheres/${sphereId}/tasks/${taskId}`,
+      method: 'delete',
+      hasAuthToken: true,
     })
   }
 }

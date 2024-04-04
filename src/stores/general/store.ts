@@ -3,28 +3,34 @@ import { makeAutoObservable } from "mobx";
 import { AccountStore } from "stores/accountStore.ts";
 import { ThemeStore } from "stores/themeStore.ts";
 import { SidebarStore } from "stores/sidebarStore.ts";
-import { TaskStore } from "stores/taskStore.ts";
+import { SphereStore } from "stores/sphereStore.ts";
 import { ProjectStore } from "stores/projectStore.ts";
+import { TaskStore } from "stores/taskStore.ts";
+
+import { IRootStore } from "types/stores/IRootStore.ts";
 
 import { IAccountStore } from "types/stores/IAccountStore.ts";
 import { IThemeStore } from "types/stores/IThemeStore.ts";
 import { ISidebarStore } from "types/stores/ISidebarStore.ts";
-import { ITasksStore } from "types/stores/ITasksStore.ts";
 import { IProjectStore } from "types/stores/IProjectStore.ts";
+import { ISphereStore } from "types/stores/ISphereStore.ts";
+import { ITaskStore } from "types/stores/ITaskStore.ts";
 
-export class Store {
+export class Store implements IRootStore {
   accountStore: IAccountStore;
   themeStore: IThemeStore;
   sidebarStore: ISidebarStore;
-  taskStore: ITasksStore;
   projectStore: IProjectStore;
+  sphereStore: ISphereStore;
+  taskStore: ITaskStore;
 
   constructor() {
     this.accountStore = new AccountStore();
     this.themeStore = new ThemeStore();
     this.sidebarStore = new SidebarStore();
-    this.taskStore = new TaskStore();
     this.projectStore = new ProjectStore();
+    this.sphereStore = new SphereStore();
+    this.taskStore = new TaskStore(this);
     makeAutoObservable(this);
   }
 }

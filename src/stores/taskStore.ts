@@ -1,61 +1,62 @@
-import { makeAutoObservable, observable, ObservableMap, values } from "mobx";
+import { makeAutoObservable } from "mobx";
 
 import TaskService from "API/rest/taskService.ts";
 
-import { ITasksStore } from "types/stores/ITasksStore.ts";
-import { TTaskCreate, TTaskSphere } from "types/entities/TTask.ts";
+import { TTaskCreate } from "types/entities/TTask.ts";
+import { ITaskStore } from "types/stores/ITaskStore.ts";
+import { IRootStore } from "../types/stores/IRootStore.ts";
 
-export class TaskStore implements ITasksStore {
-  _spheres: ObservableMap<number, TTaskSphere> = observable.map()
+export class TaskStore implements ITaskStore {
+  _root: IRootStore | null = null
   _isLoading: boolean = false;
 
-  constructor() {
+  constructor(rootStore: IRootStore) {
+    this._root = rootStore
     makeAutoObservable(this)
   }
 
   // gets
-  get spheres() {
-    return values(this._spheres)
-  }
-
   get isLoading() {
     return this._isLoading
   }
 
   // sets
-  setSphere = (sphere: TTaskSphere) => {
-    this._spheres.set(sphere.id, sphere)
-  }
-
   setLoading = (isLoading: boolean) => {
     this._isLoading = isLoading
   }
 
   // async
-  getAll = async (projectId: number) => {
+  create = async (projectId: number, sphereId: number, task: TTaskCreate) => {
     this.setLoading(true)
-    this._spheres.clear()
 
-    const response = await TaskService.getAll(projectId);
+    const response = await TaskService.create(projectId, sphereId, task);
 
     if ('data' in response) {
-      response.data.spheres.forEach(sphere => this.setSphere(sphere))
+      const sphere = this._root?.sphereStore.getSphereById(sphereId)
+
+      if (sphere) {
+        this._root?.sphereStore.setSphere({...sphere, tasks: [...sphere.tasks, response.data.task]})
+      }
     }
 
     this.setLoading(false)
-
     return response
   }
 
-  create = async (projectId: number, task: TTaskCreate) => {
+  delete = async (projectId: number, sphereId: number, taskId: number) => {
     this.setLoading(true)
 
-    const response = await TaskService.create(projectId, task);
+    const response = await TaskService.delete(projectId, sphereId, taskId);
 
-    if ('data' in response) {
-      console.log(response)
+    if (response.status === 200) {
+      const sphere = this._root?.sphereStore.getSphereById(sphereId)
+
+      if (sphere) {
+        this._root?.sphereStore.setSphere({...sphere, tasks: sphere.tasks.filter(task => task.id !== taskId)})
+      }
     }
 
     this.setLoading(false)
+    return response
   }
 }

@@ -11,18 +11,22 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<PropsWithChildren<IButtonProps>> = ({
-                                                              children,
-                                                              size = ButtonSizeVariant.DEFAULT,
-                                                              theme = ButtonThemeVariant.PRIMARY,
-                                                              className = '',
-                                                              ...props
-                                                            }) => {
+  children,
+  size = ButtonSizeVariant.DEFAULT,
+  theme = ButtonThemeVariant.PRIMARY,
+  className = '',
+  ...props
+}) => {
   const buttonClasses = clsx(styles.button, {
+    // theme
     [styles.primary]: theme === ButtonThemeVariant.PRIMARY,
     [styles.secondary]: theme === ButtonThemeVariant.SECONDARY,
+    [styles.danger]: theme === ButtonThemeVariant.DANGER,
+    // size
     [styles.small]: size === ButtonSizeVariant.SMALL,
     [styles.default]: size === ButtonSizeVariant.DEFAULT,
     [styles.big]: size === ButtonSizeVariant.BIG,
+    // custom
     [className]: !!className
   })
 

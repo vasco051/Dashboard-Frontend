@@ -14,19 +14,23 @@ export interface ILinkButtonProps {
 }
 
 export const LinkButton: FC<PropsWithChildren<ILinkButtonProps>> = ({
-                                                                      to,
-                                                                      children,
-                                                                      size = ButtonSizeVariant.DEFAULT,
-                                                                      theme = ButtonThemeVariant.PRIMARY,
-                                                                      className = '',
-                                                                      ...props
-                                                                    }) => {
+  to,
+  children,
+  size = ButtonSizeVariant.DEFAULT,
+  theme = ButtonThemeVariant.PRIMARY,
+  className = '',
+  ...props
+}) => {
   const buttonClasses = clsx(styles.button, {
+    // theme
     [styles.primary]: theme === ButtonThemeVariant.PRIMARY,
     [styles.secondary]: theme === ButtonThemeVariant.SECONDARY,
+    [styles.danger]: theme === ButtonThemeVariant.DANGER,
+    // size
     [styles.small]: size === ButtonSizeVariant.SMALL,
     [styles.default]: size === ButtonSizeVariant.DEFAULT,
     [styles.big]: size === ButtonSizeVariant.BIG,
+    // custom
     [className]: !!className
   })
 

@@ -9,9 +9,14 @@
 
   &:hover {
     border-color: var(--Greyscale-100);
+
+    .options {
+      opacity: 1;
+    }
   }
 }
 
+// header content
 .header {
   @include flex-col-gap(4px);
 
@@ -49,11 +54,30 @@
   }
 }
 
+// content
 .description {
   color: var(--Greyscale-500);
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+}
+
+.header .title, .description {
+  display: -moz-box;
+  display: -webkit-box;
+  overflow: hidden;
+  line-clamp: 3;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+// bottom content
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .dateWrapper {
@@ -68,10 +92,6 @@
   border-radius: 8px;
   background: var(--Greyscale-50);
 
-  .icon {
-
-  }
-
   .date {
     @extend %transition;
     transition-property: color;
@@ -81,4 +101,11 @@
     font-weight: 500;
     line-height: 20px;
   }
+}
+
+.options {
+  @extend %transition;
+  transition-property: opacity;
+
+  opacity: 0;
 }

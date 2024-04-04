@@ -1,19 +1,10 @@
-export type TTaskSphere = {
-  id: number
-  name: string
-  is_completed: boolean,
-  created_at: string;
-  updated_at: string;
-  color_name: string
-  tasks: TTask[]
-}
-
 export type TTask = {
   id: number;
   title: string;
   description: string | null;
   created_at: string;
   updated_at: string;
+  status_id: number;
   tag: {
     id: number,
     name: string,

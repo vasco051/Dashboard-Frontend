@@ -11,7 +11,7 @@ import { TBlockItem } from "components/Layouts/ItemsBlock";
 import { TTask } from "types/entities/TTask.ts";
 
 export const ListSection: FC = observer(() => {
-  const {spheres} = useStore().taskStore
+  const {spheres} = useStore().sphereStore
 
   const blocks: TBlockItem<TTask>[] = spheres.map(sphere => ({
     statusId: sphere.id,

@@ -17,7 +17,7 @@ import styles from "./styles.module.scss";
 
 export const Project: FC = observer(() => {
   const {isLoading, currentProject, getOne: getProject} = useStore().projectStore;
-  const {getAll: getTasks} = useStore().taskStore;
+  const {getAll: getSpheres} = useStore().sphereStore;
 
   const [currentTab, setCurrentTab] = useState<ProjectTabVariant>(ProjectTabVariant.LIST);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -30,7 +30,7 @@ export const Project: FC = observer(() => {
   useEffect(() => {
     (async function () {
       const projectResponse = await getProject(parseInt(id!))
-      getTasks(parseInt(id!))
+      getSpheres(parseInt(id!))
 
       if (projectResponse.status === 404) {
         navigate(staticLinks.notFound)

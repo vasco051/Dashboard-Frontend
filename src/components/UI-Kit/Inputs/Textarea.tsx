@@ -11,11 +11,11 @@ export interface ITextAreaProps
 
 
 export const Textarea: FC<ITextAreaProps> = ({
-                                               className = '',
-                                               resizable = false,
-                                               error,
-                                               ...props
-                                             }) => {
+  className = '',
+  resizable = false,
+  error,
+  ...props
+}) => {
   const textFieldStyle = clsx(styles.textarea, {
     [className]: !!className,
     [styles.hasError]: !!error,

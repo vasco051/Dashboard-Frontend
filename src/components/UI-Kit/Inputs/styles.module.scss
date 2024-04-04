@@ -8,6 +8,7 @@
   @extend %transition;
   transition-property: border-color;
   overflow: hidden;
+  overflow-y: auto;
 
   width: 100%;
   background: transparent;
