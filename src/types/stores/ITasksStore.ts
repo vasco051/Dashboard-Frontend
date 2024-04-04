@@ -1,7 +1,8 @@
+import { ObservableMap } from "mobx";
+
+import { TTaskSphere } from "types/entities/TTask.ts";
 import { APIResponse } from "types/API/TAPI.ts";
 import { GetTasksResponse } from "types/API/TTaskResponse.ts";
-import { TTaskSphere } from "../entities/TTask.ts";
-import { ObservableMap } from "mobx";
 
 export interface ITasksStore {
   _spheres: ObservableMap<number, TTaskSphere>;
@@ -9,13 +10,14 @@ export interface ITasksStore {
 
   // gets
   get spheres(): readonly TTaskSphere[];
+
   get isLoading(): boolean;
 
   // sets
   setSphere(sphere: TTaskSphere): void
+
   setLoading(isLoading: boolean): void
 
   // async
   getAll(projectId: number): APIResponse<GetTasksResponse>
-  addOne(sphereId: number): void
 }

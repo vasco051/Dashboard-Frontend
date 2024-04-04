@@ -1,0 +1,36 @@
+@import 'src/assets/styles/templates';
+
+.popup {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1000;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: auto;
+
+  background: rgba(69, 73, 88, 0.40);
+  overflow-y: auto;
+}
+
+.content {
+  position: relative;
+
+  background-color: var(--Additional-white);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 0 12px 0 rgba(34, 60, 80, 0.05);
+  -moz-box-shadow: 0 0 12px 0 rgba(34, 60, 80, 0.05);
+  box-shadow: 0 0 5px 0 rgba(34, 60, 80, 0.05);
+
+  z-index: 100;
+}

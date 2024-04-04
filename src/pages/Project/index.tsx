@@ -16,14 +16,14 @@ import { ProjectTabVariant } from "./types.ts";
 import styles from "./styles.module.scss";
 
 export const Project: FC = observer(() => {
-  const { isLoading, currentProject, getOne: getProject } = useStore().projectStore;
-  const { getAll: getTasks } = useStore().taskStore;
+  const {isLoading, currentProject, getOne: getProject} = useStore().projectStore;
+  const {getAll: getTasks} = useStore().taskStore;
 
   const [currentTab, setCurrentTab] = useState<ProjectTabVariant>(ProjectTabVariant.LIST);
   const [searchParams, setSearchParams] = useSearchParams();
   useSetSearchTab(ProjectTabVariant, setCurrentTab)
 
-  const { id } = useParams()
+  const {id} = useParams()
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -59,11 +59,11 @@ export const Project: FC = observer(() => {
 
   return (
     <PageWrapper>
-            <Header projectInfo={projectInfo} panelInfo={panelInfo}/>
+      <Header projectInfo={projectInfo} panelInfo={panelInfo}/>
 
-            <div className={styles.wrapper}>
-                {contentConfig[currentTab]}
-            </div>
-        </PageWrapper>
+      <div className={styles.wrapper}>
+        {contentConfig[currentTab]}
+      </div>
+    </PageWrapper>
   )
 });

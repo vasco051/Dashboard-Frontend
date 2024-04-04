@@ -1,4 +1,5 @@
-import { Input, IInputProps } from './Input.tsx'
+import { IInputProps, Input } from './Input.tsx'
+import { ITextAreaProps, Textarea } from "./Textarea.tsx";
 
-export { Input }
-export type { IInputProps }
+export { Input, Textarea }
+export type { IInputProps, ITextAreaProps }

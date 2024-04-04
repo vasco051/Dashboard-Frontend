@@ -22,3 +22,9 @@ export type TTask = {
     updated_at: string;
   } | null
 }
+
+export type TTaskCreate = {
+  title: string;
+  status: string;
+  description: string | null;
+}

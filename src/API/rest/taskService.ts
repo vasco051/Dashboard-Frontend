@@ -1,5 +1,6 @@
 import makeRequest from "API/makeRequest.ts";
 
+import { TTaskCreate } from "types/entities/TTask.ts";
 import { GetTaskResponse, GetTasksResponse } from "types/API/TTaskResponse.ts";
 
 class TaskService {
@@ -14,6 +15,15 @@ class TaskService {
     return await makeRequest<GetTaskResponse>({
       url: `api/projects/${projectId}/tasks/${taskId}`,
       hasAuthToken: true
+    })
+  }
+
+  async create(projectId: number, task: TTaskCreate) {
+    return await makeRequest<GetTaskResponse>({
+      url: `api/projects/${projectId}/tasks`,
+      method: 'post',
+      hasAuthToken: true,
+      data: task
     })
   }
 }

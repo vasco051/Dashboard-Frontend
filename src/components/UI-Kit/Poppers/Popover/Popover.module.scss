@@ -1,0 +1,29 @@
+@import 'src/assets/styles/templates';
+
+.headerOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: calc(100% - 80px);
+  right: 0;
+  z-index: 1001;
+}
+
+.overlay {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.content {
+  position: relative;
+
+  background-color: var(--c_white-all);
+  border-radius: 12px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}

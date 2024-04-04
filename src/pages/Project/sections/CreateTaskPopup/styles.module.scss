@@ -1,0 +1,63 @@
+@import "src/assets/styles/templates";
+
+.popup {
+  max-width: 1000px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px;
+  border-bottom: 1px solid var(--Greyscale-100);
+
+  .bradCrumbsWrapper {
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: var(--Greyscale-50);
+
+    span {
+      font-weight: 600;
+      line-height: 20px;
+      color: var(--Greyscale-500);
+    }
+  }
+
+  .closeButton {
+    background-color: transparent;
+    cursor: pointer;
+
+    svg path {
+      stroke: var(--Greyscale-500);
+    }
+  }
+}
+
+.content {
+  @include flex-col-gap(32px);
+
+  padding: 32px 24px 40px;
+
+  .form {
+    @include flex-col-gap(12px);
+
+    button {
+      margin-top: 20px;
+    }
+  }
+}
+
+.status{
+  padding: 10px 12px;
+  border-radius: 8px;
+  width: max-content;
+
+  span {
+    font-weight: 600;
+    line-height: 20px;
+    color: white;
+  }
+}

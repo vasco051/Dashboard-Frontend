@@ -1,7 +1,7 @@
 import { FC, InputHTMLAttributes, ReactNode } from 'react';
+import clsx from "clsx";
 
 import styles from './styles.module.scss'
-import clsx from "clsx";
 
 export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: string
@@ -28,5 +28,3 @@ export const Input: FC<IInputProps> = ({ className = '', error, leftIcon, rightI
     </div>
   );
 };
-
-export default Input;

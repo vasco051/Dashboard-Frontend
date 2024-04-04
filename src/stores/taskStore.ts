@@ -3,7 +3,7 @@ import { makeAutoObservable, observable, ObservableMap, values } from "mobx";
 import TaskService from "API/rest/taskService.ts";
 
 import { ITasksStore } from "types/stores/ITasksStore.ts";
-import { TTaskSphere } from "types/entities/TTask.ts";
+import { TTaskCreate, TTaskSphere } from "types/entities/TTask.ts";
 
 export class TaskStore implements ITasksStore {
   _spheres: ObservableMap<number, TTaskSphere> = observable.map()
@@ -47,21 +47,15 @@ export class TaskStore implements ITasksStore {
     return response
   }
 
-  addOne = (sphereId: number) => {
-    const currentSphere = this._spheres.get(sphereId)
+  create = async (projectId: number, task: TTaskCreate) => {
+    this.setLoading(true)
 
-    if (!currentSphere) return null
+    const response = await TaskService.create(projectId, task);
 
-    currentSphere.name += ' '
-    currentSphere.tasks.unshift({
-      id: 999,
-      tag: null,
-      created_at: '',
-      updated_at: '',
-      description: null,
-      title: 'new task'
-    })
+    if ('data' in response) {
+      console.log(response)
+    }
 
-    this.setSphere(currentSphere)
+    this.setLoading(false)
   }
 }
