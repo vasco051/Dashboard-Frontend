@@ -8,7 +8,7 @@ import Block from "../block";
 
 import { getColorByName } from "utils/getColorByName.ts";
 import { dynamicLinks } from "config/routingLinks.ts";
-import { menu } from "data/Sidebar.tsx";
+import { menu } from "data/sidebar.tsx";
 
 import { TBlockItem } from "../block/types.ts";
 

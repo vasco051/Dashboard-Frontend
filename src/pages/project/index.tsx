@@ -4,13 +4,11 @@ import { observer } from "mobx-react";
 
 import { useStore } from "hooks/useStore.ts";
 import { useSetSearchTab } from "hooks/useSetSearchTab.ts";
-import { PageWrapper } from "components/layout/page-wrapper";
-import { Header } from "components/layout/header/Header.tsx";
+import { Header, PageWrapper, TProjectInfo } from "components/layout";
 
 import { staticLinks } from "config/routingLinks.ts";
 import { contentConfig, getProjectPanelInfo } from "./config.tsx";
 
-import { TProjectInfo } from "components/layout/header";
 import { ProjectTabVariant } from "./types.ts";
 
 import styles from "./styles.module.scss";

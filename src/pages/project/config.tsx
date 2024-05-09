@@ -1,5 +1,5 @@
-import { ListSection } from "./sections/ListSection";
-import { BoardSection } from "./sections/BoardSection";
+import { ListSection } from "./sections/list-section";
+import { BoardSection } from "./sections/board-section";
 
 import { TPanelInfo } from "components/layout/header";
 import { ProjectTabVariant, TProjectTabContent } from "./types.ts";

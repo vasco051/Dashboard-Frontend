@@ -3,10 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 
 import { useStore } from "hooks/useStore.ts";
-import { PageWrapper } from "components/layout/page-wrapper";
-import { Button, ButtonSizeVariant } from "components/UI-Kit/Buttons";
-import { PasswordInput } from "components/ui/password-input";
-import { Input } from "components/UI-Kit/Inputs";
+import { PageWrapper } from "components/layout";
+import { PasswordInput } from "components/ui";
+import { Input, Button, ButtonSizeVariant } from "components/ui-kit";
 import { Intro } from "./sections/intro";
 
 import { staticLinks } from "config/routingLinks.ts";

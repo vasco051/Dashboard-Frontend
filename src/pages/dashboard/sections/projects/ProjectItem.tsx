@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { getProgressColor } from "utils/getProgressColor.ts";
-
 import { dynamicLinks } from "config/routingLinks.ts";
 
 import { TProject } from "types/entities/TProject.ts";

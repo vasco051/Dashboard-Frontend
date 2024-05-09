@@ -1,8 +1,7 @@
 import { observer } from "mobx-react";
 
 import { useStore } from "hooks/useStore.ts";
-import { Button, ButtonThemeVariant } from "components/UI-Kit/Buttons";
-import { Popup } from "components/ui-kit/poppers";
+import { Button, ButtonThemeVariant, Popup } from "components/ui-kit";
 
 import { ITaskPopupProps } from "../types.ts";
 
@@ -13,7 +12,7 @@ interface IRemoveTaskPopup extends ITaskPopupProps {
   taskId: number | null;
 }
 
-export const RemoveTaskPopup = observer(({
+export const DeleteTaskPopup = observer(({
   isOpen,
   onClose,
   taskId,

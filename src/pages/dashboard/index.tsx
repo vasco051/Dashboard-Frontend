@@ -1,8 +1,7 @@
 import { FC } from 'react';
 
-import { PageWrapper } from "components/layout/page-wrapper";
-import { Header } from "components/layout/header/Header.tsx"
-import { Projects } from "./sections/Projects";
+import { Header, PageWrapper } from "components/layout";
+import { Projects } from "./sections/projects";
 
 import styles from './styles.module.scss'
 

@@ -3,9 +3,7 @@ import { observer } from "mobx-react";
 import { useFormik } from "formik";
 
 import { useStore } from "hooks/useStore.ts";
-import { Popup } from "components/ui-kit/poppers";
-import { Input, Textarea } from "components/UI-Kit/Inputs";
-import { Button } from "components/UI-Kit/Buttons";
+import { Input, Textarea, Popup, Button } from "components/ui-kit";
 
 import { TTaskCreate } from "types/entities/TTask.ts";
 import { ITaskPopupProps } from "../types.ts";

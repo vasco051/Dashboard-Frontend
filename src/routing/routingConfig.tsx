@@ -1,11 +1,11 @@
 import { staticLinks } from "config/routingLinks.ts";
 
-import { NotFound } from "pages/NotFound";
+import { NotFound } from "pages/not-found";
 import { Authorization } from "pages/auth/Authorization.tsx";
 import { Registration } from "pages/auth/Registration.tsx";
-import { Dashboard } from "pages/Dashboard";
-import { Tasks } from "pages/Tasks";
-import { Project } from "pages/Project";
+import { Dashboard } from "pages/dashboard";
+import { Tasks } from "pages/tasks";
+import { Project } from "pages/project";
 
 export const unauthorizedRoutes = [
   {
