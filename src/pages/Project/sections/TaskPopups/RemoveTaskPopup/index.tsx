@@ -6,6 +6,7 @@ import { Popup } from "components/UI-Kit/Poppers";
 
 import { ITaskPopupProps } from "../types.ts";
 
+import IcClose from 'assets/icons/general/ic_close.svg?react'
 import styles from './styles.module.scss'
 
 interface IRemoveTaskPopup extends ITaskPopupProps {
@@ -32,7 +33,11 @@ export const RemoveTaskPopup = observer(({
   return (
     <Popup onClose={onClose} isOpen={isOpen} className={styles.popup}>
       <div className={styles.content}>
-        <h4 className={styles.title}>Удаление задания</h4>
+        <div className={styles.header}>
+          <h4 className={styles.title}>Удаление задания</h4>
+          <button className={styles.closeButton} onClick={onClose}><IcClose/></button>
+        </div>
+
         <p className={styles.description}>
           Вы действительно хотите удалить задание? <br/>
           Если вы удалите его, то все данные связанные с ним будут безвозвратно утеряны.

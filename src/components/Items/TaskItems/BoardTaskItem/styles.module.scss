@@ -105,7 +105,25 @@
 
 .options {
   @extend %transition;
-  transition-property: opacity;
+  transition-property: opacity, background-color;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   opacity: 0;
+  height: 36px;
+  padding: 0 8px;
+
+  border-radius: 8px;
+  background: var(--Greyscale-50);
+
+  svg {
+    width: 14px;
+    height: 14px;
+
+    path {
+      stroke: var(--Greyscale-500);
+    }
+  }
 }

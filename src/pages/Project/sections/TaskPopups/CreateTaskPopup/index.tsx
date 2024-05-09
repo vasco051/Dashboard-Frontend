@@ -13,7 +13,6 @@ import { ITaskPopupProps } from "../types.ts";
 import IcClose from 'assets/icons/general/ic_close.svg?react'
 import styles from './styles.module.scss'
 
-
 export const CreateTaskPopup: FC<ITaskPopupProps> = observer(({
   projectId,
   projectName,

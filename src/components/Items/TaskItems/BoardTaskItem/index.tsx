@@ -7,6 +7,7 @@ import { getColorByName } from "utils/getColorByName.ts";
 import { TTask } from "types/entities/TTask.ts";
 
 import IcCalendar from 'assets/icons/general/ic_calendar.svg?react'
+import IcTrash from 'assets/icons/general/ic_trash.svg?react'
 import styles from './styles.module.scss'
 
 interface IBoardTaskItemProps {
@@ -42,7 +43,7 @@ export const BoardTaskItem: FC<IBoardTaskItemProps> = ({item, onRemoveItem}) => 
           <span className={styles.date}>{finishDate}</span>
         </div>
 
-        <div className={styles.options} onClick={onClickRemoveItem}>Уд.</div>
+        <div className={styles.options} onClick={onClickRemoveItem}><IcTrash/></div>
       </div>
     </li>
   );

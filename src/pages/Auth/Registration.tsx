@@ -26,7 +26,7 @@ export const Registration: FC = () => {
       password: '',
       approve_password: ''
     } as TRegistrationData,
-    onSubmit: async (values) => {
+    onSubmit: async values => {
       const response = await registration(values)
 
       if ('data' in response) navigate(staticLinks.main)

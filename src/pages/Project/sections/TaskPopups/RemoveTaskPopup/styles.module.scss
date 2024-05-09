@@ -5,16 +5,34 @@
   padding: 24px;
 }
 
-.content {
-  @include flex-col-gap(24px);
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   .title {
+    color: var(--Greyscale-900);
     font-size: 24px;
     line-height: 125%;
     letter-spacing: 0.2px;
   }
 
+  .closeButton {
+    background-color: transparent;
+    cursor: pointer;
+    height: 24px;
+
+    svg path {
+      stroke: var(--Greyscale-500);
+    }
+  }
+}
+
+.content {
+  @include flex-col-gap(24px);
+
   .description {
+    color: var(--Greyscale-900);
     font-size: 16px;
     line-height: 125%;
     letter-spacing: 0.2px;
