@@ -2,8 +2,8 @@ import { FC } from 'react';
 import { BrowserRouter } from "react-router-dom";
 
 import { AppRouting } from "routing";
-import { StoreProvider } from "components/Logic/StoreProvider";
-import { Sidebar } from "components/Layouts/Sidebar";
+import { StoreProvider } from "components/logic/store-provider";
+import { Sidebar } from "components/layout/sidebar";
 
 import { staticLinks } from "config/routingLinks.ts";
 

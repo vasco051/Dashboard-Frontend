@@ -2,12 +2,12 @@ import { FC } from "react";
 import { observer } from "mobx-react";
 
 import { useStore } from "hooks/useStore.ts";
-import { List } from "components/UI/List";
-import { ListTaskItem } from "components/Items/TaskItems";
+import { List } from "components/ui/list";
+import { ListTaskItem } from "components/items/task-items";
 
 import { getColorByName } from "utils/getColorByName.ts";
 
-import { TBlockItem } from "components/Layouts/ItemsBlock";
+import { TBlockItem } from "components/layout/items-block";
 import { TTask } from "types/entities/TTask.ts";
 
 export const ListSection: FC = observer(() => {

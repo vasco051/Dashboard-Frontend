@@ -3,15 +3,15 @@ import { useParams } from "react-router-dom";
 import { observer } from "mobx-react";
 
 import { useStore } from "hooks/useStore.ts";
-import { Board } from "components/UI/Board";
-import { BoardTaskItem } from "components/Items/TaskItems";
-import { EmptyItem } from "components/UI/EmptyItem";
+import { Board } from "components/ui/board";
+import { BoardTaskItem } from "components/items/task-items";
+import { EmptyItem } from "components/ui/empty-item";
 import { CreateTaskPopup, RemoveTaskPopup } from "../TaskPopups";
 
 import { getColorByName } from "utils/getColorByName.ts";
 
 import { TTask } from "types/entities/TTask.ts";
-import { TBlockItem } from "components/Layouts/ItemsBlock";
+import { TBlockItem } from "components/layout/items-block";
 
 type TRemovePopupConfig = {
   isOpen: boolean;

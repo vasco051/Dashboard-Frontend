@@ -1,4 +1,4 @@
-import { TBlockItem } from "components/Layouts/Sidebar/sections/Block/types.ts";
+import { TBlockItem } from "components/layout/sidebar/sections/block/types.ts";
 
 import { staticLinks } from "config/routingLinks.ts";
 

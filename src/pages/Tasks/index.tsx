@@ -1,12 +1,12 @@
 import { FC, useLayoutEffect, useState } from 'react';
 import { useSearchParams } from "react-router-dom";
 
-import { PageWrapper } from "components/Layouts/PageWrapper";
-import { Header } from "components/Layouts/Header/Header.tsx";
-import { List } from "components/UI/List";
-import { Board } from "components/UI/Board";
+import { PageWrapper } from "components/layout/page-wrapper";
+import { Header } from "components/layout/header/Header.tsx";
+import { List } from "components/ui/list";
+import { Board } from "components/ui/board";
 
-import { TPanelInfo } from "components/Layouts/Header";
+import { TPanelInfo } from "components/layout/header";
 import { TasksTabVariant, TTasksTabContent } from "./types.ts";
 
 import styles from './styles.module.scss'

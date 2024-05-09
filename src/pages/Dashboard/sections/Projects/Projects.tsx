@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import { observer } from "mobx-react";
 
 import { useStore } from "hooks/useStore.ts";
-import { Hr } from "components/UI/Hr";
+import { Hr } from "components/ui/hr";
 import { ProjectItem } from "./ProjectItem.tsx";
 
 import styles from "./styles.module.scss";

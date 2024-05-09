@@ -1,7 +1,7 @@
 import { ListSection } from "./sections/ListSection";
 import { BoardSection } from "./sections/BoardSection";
 
-import { TPanelInfo } from "components/Layouts/Header";
+import { TPanelInfo } from "components/layout/header";
 import { ProjectTabVariant, TProjectTabContent } from "./types.ts";
 
 import IcList from 'assets/icons/tasks/ic_list.svg?react'

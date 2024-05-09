@@ -1,4 +1,4 @@
-import { TBlockItem } from "components/Layouts/ItemsBlock";
+import { TBlockItem } from "components/layout/items-block";
 
 import { TTask } from "types/entities/TTask.ts";
 

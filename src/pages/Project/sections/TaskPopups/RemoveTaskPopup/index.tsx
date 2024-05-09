@@ -2,7 +2,7 @@ import { observer } from "mobx-react";
 
 import { useStore } from "hooks/useStore.ts";
 import { Button, ButtonThemeVariant } from "components/UI-Kit/Buttons";
-import { Popup } from "components/UI-Kit/Poppers";
+import { Popup } from "components/ui-kit/poppers";
 
 import { ITaskPopupProps } from "../types.ts";
 

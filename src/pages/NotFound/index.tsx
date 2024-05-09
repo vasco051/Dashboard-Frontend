@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { PageWrapper } from "components/Layouts/PageWrapper";
+import { PageWrapper } from "components/layout/page-wrapper";
 import { ButtonSizeVariant, ButtonThemeVariant, LinkButton } from "components/UI-Kit/Buttons";
 
 import { staticLinks } from "config/routingLinks.ts";
