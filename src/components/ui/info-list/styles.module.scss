@@ -1,0 +1,40 @@
+@import "src/assets/styles/templates";
+
+.list {
+  @include flex-col-gap(4px);
+}
+
+.item {
+  @include flex-gap(24px);
+  @extend %transition;
+
+  padding: 2px 5px;
+  border-radius: 5px;
+
+  &:hover {
+    background: var(--Greyscale-50);
+  }
+
+  .left {
+    @extend %transition;
+    color: var(--Greyscale-500);
+
+    min-width: 190px;
+    max-width: 190px;
+    user-select: none;
+
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+  }
+
+  .right {
+    @extend %transition;
+    color: var(--Greyscale-900);
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+  }
+}

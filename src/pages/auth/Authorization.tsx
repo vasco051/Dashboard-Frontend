@@ -12,7 +12,7 @@ import { staticLinks } from "config/routingLinks.ts";
 
 import { TLoginData } from "types/entities/TAccount.ts";
 
-import IcUser from 'assets/icons/general/ic_user.svg?react'
+import IcMail from 'assets/icons/general/ic_mail.svg?react'
 import styles from './styles.module.scss'
 
 export const Authorization: FC = () => {
@@ -21,11 +21,11 @@ export const Authorization: FC = () => {
 
   const formik = useFormik({
     initialValues: {
-      username: '',
+      email: '',
       password: ''
     } as TLoginData,
     onSubmit: async (values) => {
-      const response = await login(values)
+      const response = await login({...values, email: values.email.toLowerCase()})
 
       if ('data' in response) navigate(staticLinks.main)
       else formik.setErrors(response.errors)
@@ -44,16 +44,18 @@ export const Authorization: FC = () => {
 
           <form onSubmit={formik.handleSubmit} className={styles.form}>
             <Input
-              name='username'
-              placeholder='Имя пользователя'
-              error={formik.errors.username}
-              leftIcon={<IcUser/>}
-              value={formik.values.username}
+              name='email'
+              label='Почта'
+              placeholder='example@mail.ru'
+              error={formik.errors.email}
+              leftIcon={{icon: <IcMail/>, colorType: 'fill'}}
+              value={formik.values.email}
               onChange={formik.handleChange}
             />
 
             <PasswordInput
               name='password'
+              label='Пароль'
               placeholder='Пароль'
               error={formik.errors.password}
               value={formik.values.password}

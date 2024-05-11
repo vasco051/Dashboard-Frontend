@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import clsx from "clsx";
 
-import { Input, IInputProps } from "components/ui-kit";
+import { IInputProps, Input } from "components/ui-kit";
 
 import IcLock from 'assets/icons/general/ic_lock.svg?react'
 import IcEye from 'assets/icons/general/ic_eye.svg?react'
@@ -11,7 +11,7 @@ import styles from './styles.module.scss'
 interface IPasswordInput extends IInputProps {
 }
 
-export const PasswordInput: FC<IPasswordInput> = ({ className = '', ...props }) => {
+export const PasswordInput: FC<IPasswordInput> = ({className = '', ...props}) => {
   const [isShowPassword, setIsShowPassword] = useState(false)
 
   const toggleIsShowPassword = () => setIsShowPassword(prev => !prev)
@@ -25,10 +25,10 @@ export const PasswordInput: FC<IPasswordInput> = ({ className = '', ...props }) 
       {...props}
       type={isShowPassword ? 'text' : 'password'}
       className={inputClasses}
-      leftIcon={<IcLock/>}
+      leftIcon={{icon: <IcLock/>, colorType: 'stroke'}}
       rightIcon={isShowPassword
-        ? <IcEye onClick={toggleIsShowPassword}/>
-        : <IcEyeOff onClick={toggleIsShowPassword}/>
+        ? {icon: <IcEye onClick={toggleIsShowPassword}/>, colorType: 'stroke'}
+        : {icon: <IcEyeOff onClick={toggleIsShowPassword}/>, colorType: 'stroke'}
       }
     />
   );

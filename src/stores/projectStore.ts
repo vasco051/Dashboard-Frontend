@@ -1,8 +1,9 @@
 import { makeAutoObservable, observable, ObservableMap, values } from "mobx";
 
-import { TProject } from "types/entities/TProject.ts";
+import ProjectService from "API/rest/projectService.ts";
+
+import { TProject, TProjectCreate } from "types/entities/TProject.ts";
 import { IProjectStore } from "types/stores/IProjectStore.ts";
-import projectService from "../API/rest/projectService.ts";
 
 export class ProjectStore implements IProjectStore {
   _projects: ObservableMap<number, TProject> = observable.map()
@@ -43,7 +44,7 @@ export class ProjectStore implements IProjectStore {
   getAll = async () => {
     this.setIsLoading(true)
 
-    const response = await projectService.getAll();
+    const response = await ProjectService.getAll();
 
     if ('data' in response) {
       response.data.projects.forEach(project => this.setProject(project))
@@ -57,7 +58,7 @@ export class ProjectStore implements IProjectStore {
     this.setIsLoading(true)
     this.setCurrentProject(null)
 
-    const response = await projectService.getOne(id);
+    const response = await ProjectService.getOne(id);
 
     if ('data' in response) {
       this.setCurrentProject(response.data.project)
@@ -67,8 +68,17 @@ export class ProjectStore implements IProjectStore {
     return response
   }
 
-  create = async () => {
+  create = async (project: TProjectCreate) => {
+    this.setIsLoading(true)
 
+    const response = await ProjectService.create(project);
+
+    if ('data' in response) {
+      this.getAll()
+    }
+
+    this.setIsLoading(false)
+    return response
   }
 
 

@@ -4,6 +4,7 @@ import { ISidebarStore } from "./ISidebarStore.ts";
 import { IProjectStore } from "./IProjectStore.ts";
 import { ISphereStore } from "./ISphereStore.ts";
 import { ITaskStore } from "./ITaskStore.ts";
+import { IColorStore } from "./IColorStore.ts";
 
 export interface IRootStore{
   accountStore: IAccountStore;
@@ -12,4 +13,5 @@ export interface IRootStore{
   projectStore: IProjectStore;
   sphereStore: ISphereStore;
   taskStore: ITaskStore;
+  colorStore: IColorStore;
 }

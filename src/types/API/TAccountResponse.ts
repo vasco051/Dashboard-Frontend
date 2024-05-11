@@ -13,3 +13,7 @@ export type GetLoginResponse = {
 export type GetAuthResponse = {
   user: TUser;
 }
+
+export type GetUpdateProfileResponse = {
+  user: TUser;
+}

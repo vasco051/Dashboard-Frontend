@@ -1,7 +1,12 @@
 import { APIResponse } from "types/API/TAPI.ts";
 
-import { TLoginData, TRegistrationData } from "types/entities/TAccount.ts";
-import { GetAuthResponse, GetLoginResponse, GetRegistrationResponse } from "types/API/TAccountResponse.ts";
+import { TLoginData, TRegistrationData, TUpdateProfileData } from "types/entities/TAccount.ts";
+import {
+  GetAuthResponse,
+  GetLoginResponse,
+  GetRegistrationResponse,
+  GetUpdateProfileResponse
+} from "types/API/TAccountResponse.ts";
 import { TUser } from "../entities/TUser.ts";
 
 export interface IAccountStore {
@@ -23,4 +28,6 @@ export interface IAccountStore {
   login(data: TLoginData): APIResponse<GetLoginResponse>;
   auth(): APIResponse<GetAuthResponse>;
   logout(): void;
+
+  updateProfile(data: TUpdateProfileData): APIResponse<GetUpdateProfileResponse>;
 }
