@@ -8,12 +8,12 @@ import { PopupProps } from '../types.ts';
 import styles from './styles.module.scss';
 
 export const Popup: FC<PopupProps> = ({
-                                 isOpen,
-                                 onClose,
-                                 children,
-                                 className = '',
-                                 ...props
-                               }) => {
+                                        isOpen,
+                                        onClose,
+                                        children,
+                                        className = '',
+                                        ...props
+                                      }) => {
   useEffect(() => {
     if (isOpen) {
       document.documentElement.style.overflow = 'hidden';
@@ -42,9 +42,9 @@ export const Popup: FC<PopupProps> = ({
           onClick={onClose}
         >
           <div
-            {...props}
-            className={contentClasses}
             onClick={(e) => e.stopPropagation()}
+            className={contentClasses}
+            {...props}
           >
             {children}
           </div>

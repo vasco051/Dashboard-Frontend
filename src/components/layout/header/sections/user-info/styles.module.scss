@@ -14,8 +14,13 @@
   @extend %transition;
   transition-property: color;
 
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
   color: var(--Greyscale-500);
   font-size: 14px;
-  font-weight: 700;
   line-height: 20px;
+  font-weight: 500;
 }

@@ -13,15 +13,17 @@ import { menu } from "data/sidebar.tsx";
 import { TBlockItem } from "../block/types.ts";
 
 import styles from "./styles.module.scss";
+import { EmptyProjectsItem } from "./empty-projects-item";
+import { ProjectsControls } from "./projects-controls";
 
 const Content: FC = observer(() => {
   const store = useStore()
-  const { isOpen } = store.sidebarStore;
-  const { isAuth } = store.accountStore;
+  const {isOpen} = store.sidebarStore;
+  const {isAuth} = store.accountStore;
 
   const isOpenSidebar = isAuth && isOpen
 
-  const { projects, getAll } = useStore().projectStore;
+  const {projects, getAll} = useStore().projectStore;
 
   useEffect(() => {
     isAuth && getAll()
@@ -29,10 +31,12 @@ const Content: FC = observer(() => {
 
   const projectsBlock: TBlockItem = {
     title: 'Проекты',
+    control: <ProjectsControls/>,
+    emptyItem: <EmptyProjectsItem/>,
     items: projects.map(project => ({
       id: project.id,
-      link: dynamicLinks.project(project.id),
       text: project.name,
+      link: dynamicLinks.project(project.id),
       color: getColorByName(project.color_name)
     }))
   }

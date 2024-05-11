@@ -6,6 +6,7 @@ import { SidebarStore } from "stores/sidebarStore.ts";
 import { SphereStore } from "stores/sphereStore.ts";
 import { ProjectStore } from "stores/projectStore.ts";
 import { TaskStore } from "stores/taskStore.ts";
+import { ColorStore } from "stores/colorStore.ts";
 
 import { IRootStore } from "types/stores/IRootStore.ts";
 
@@ -15,6 +16,7 @@ import { ISidebarStore } from "types/stores/ISidebarStore.ts";
 import { IProjectStore } from "types/stores/IProjectStore.ts";
 import { ISphereStore } from "types/stores/ISphereStore.ts";
 import { ITaskStore } from "types/stores/ITaskStore.ts";
+import { IColorStore } from "types/stores/IColorStore.ts";
 
 export class Store implements IRootStore {
   accountStore: IAccountStore;
@@ -23,6 +25,7 @@ export class Store implements IRootStore {
   projectStore: IProjectStore;
   sphereStore: ISphereStore;
   taskStore: ITaskStore;
+  colorStore: IColorStore;
 
   constructor() {
     this.accountStore = new AccountStore();
@@ -31,6 +34,7 @@ export class Store implements IRootStore {
     this.projectStore = new ProjectStore();
     this.sphereStore = new SphereStore();
     this.taskStore = new TaskStore(this);
+    this.colorStore = new ColorStore();
     makeAutoObservable(this);
   }
 }

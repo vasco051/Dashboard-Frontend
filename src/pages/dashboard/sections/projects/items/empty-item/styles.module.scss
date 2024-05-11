@@ -1,0 +1,21 @@
+@import "src/assets/styles/templates";
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  padding: 60px 20px;
+}
+
+.content {
+  @include flex-col-gap(24px);
+  align-items: center;
+  max-width: 600px;
+
+  .title {
+    text-align: center;
+  }
+}

@@ -2,18 +2,24 @@
 
 .block {
   @include flex-col-gap(12px);
-}
 
-.title {
-  padding: 0 16px;
+  .header {
+    @include flex-gap(12px);
+    justify-content: space-between;
+    align-items: center;
 
-  color: var(--Greyscale-400, #94A3B8);
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 20px;
-  letter-spacing: 1px;
-}
+    .title {
+      padding: 0 16px;
 
-.list {
-  @include flex-col-gap(0);
+      color: var(--Greyscale-400, #94A3B8);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .list {
+    @include flex-col-gap(0);
+  }
 }

@@ -1,5 +1,6 @@
 @import "src/assets/styles/templates";
 
 .wrapper {
+  @include flex-col-gap(32px);
   margin: 24px 32px;
 }

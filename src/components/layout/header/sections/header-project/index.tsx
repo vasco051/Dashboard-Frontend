@@ -1,5 +1,7 @@
 import { FC } from "react";
 
+import { EHeadingLevel, Heading } from "components/ui-kit";
+
 import { getColorByName } from "utils/getColorByName.ts";
 
 import { TProjectInfo } from "./types.ts";
@@ -25,7 +27,7 @@ export const HeaderProject: FC<IHeaderProjectProps> = ({ info }) => {
           ? <div className={styles.skeleton}></div>
           : (
             <>
-              <h1 className={styles.title}>{info.project?.name}</h1>
+              <Heading level={EHeadingLevel.H5}>{info.project?.name}</Heading>
               {info.project?.description && <p className={styles.description}>{info.project?.description}</p>}
             </>
           )

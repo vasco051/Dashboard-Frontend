@@ -45,17 +45,6 @@
   @include flex-col-gap(4px);
   justify-content: center;
 
-  .title {
-    @extend %transition;
-    transition-property: color;
-
-    color: var(--Greyscale-900);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 0.2px;
-  }
-
   .description {
     color: var(--Greyscale-500, #64748B);
     font-size: 14px;

@@ -8,3 +8,9 @@ export type TProject = {
   created_at: string;
   updated_at: string;
 }
+
+export type TProjectCreate = {
+  name: string;
+  description: string;
+  color: string | null
+}

@@ -4,128 +4,41 @@
   @include section(24px 20px);
   @include flex-col-gap(16px);
 
-  .title {
-    @extend %transition;
-    transition-property: color;
+  .header {
+    @include flex-gap(16px);
 
-    color: var(--Greyscale-900);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 150%;
-    letter-spacing: 0.2px;
+    .addButton {
+      @extend %transition;
+      @include flex-gap(12px);
+      align-items: center;
+
+      height: 100%;
+      padding: 6px 12px;
+
+      color: var(--Greyscale-900);
+      background: var(--Greyscale-50);
+
+      cursor: pointer;
+      border-radius: 100px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      svg {
+        width: 14px;
+        height: 14px;
+
+        path {
+          @extend %transition;
+          stroke: var(--Greyscale-900);
+        }
+      }
+    }
   }
 
   .list {
     @include flex-gap(16px);
     flex-wrap: wrap;
-  }
-}
-
-// project item
-.item {
-  flex: 1 1 auto;
-  max-width: calc((100% / 4) - (48px / 4));
-  min-width: calc(calc(100vw - 250px - 104px) / 6);
-
-  .link {
-    @extend %transition;
-    transition-property: background-color, border-color;
-    @include flex-col-gap(16px);
-
-    padding: 16px;
-    cursor: pointer;
-
-    border: 1px solid transparent;
-    border-radius: 12px;
-
-    background: var(--Greyscale-50);
-
-    &:hover {
-      border-color: var(--Greyscale-100);
-    }
-  }
-
-  .title {
-    @extend %transition;
-    transition-property: color;
-
-    color: var(--Greyscale-900);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 150%;
-    letter-spacing: 0.2px;
-  }
-
-  .progress {
-    @include flex-col-gap(8px);
-
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .text {
-        @extend %transition;
-        transition-property: color;
-
-        color: var(--Greyscale-500);
-        font-size: 14px;
-        line-height: 160%;
-      }
-
-      .number {
-        @extend %transition;
-        transition-property: color;
-
-        color: var(--Greyscale-900);
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 160%;
-      }
-    }
-
-    .progressBar {
-      @extend %transition;
-      transition-property: background-color;
-
-      height: 6px;
-      width: 100%;
-      background: var(--Greyscale-300);
-      border-radius: 12px;
-
-      .progressLine {
-        @extend %transition;
-        animation: 1s progressBarAnimation;
-
-        height: 100%;
-
-        border-radius: 12px;
-        background: var(--Primary-600-base);
-      }
-    }
-  }
-
-  .bottom {
-    .completed {
-      span {
-        @extend %transition;
-        transition-property: color;
-
-        color: var(--Greyscale-500);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 160%;
-      }
-
-      .ready {
-        color: var(--Greyscale-900);
-      }
-    }
-  }
-}
-
-@keyframes progressBarAnimation {
-  from {
-    width: 0;
   }
 }

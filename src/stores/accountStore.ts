@@ -3,7 +3,7 @@ import { makeAutoObservable } from "mobx";
 import { localStorageConst } from "config/localStorageConst.ts";
 import accountService from "API/rest/accountService.ts";
 
-import { TLoginData, TRegistrationData } from "types/entities/TAccount.ts";
+import { TLoginData, TRegistrationData, TUpdateProfileData } from "types/entities/TAccount.ts";
 import { IAccountStore } from "types/stores/IAccountStore.ts";
 import { TUser } from "types/entities/TUser.ts";
 
@@ -84,7 +84,7 @@ export class AccountStore implements IAccountStore {
     if ('data' in response) {
       this.setAccount(response.data.user)
     } else if ('errors' in response) {
-      this.setToken(null)
+      this.logout()
     }
 
     this.setIsLoading(false)
@@ -94,5 +94,18 @@ export class AccountStore implements IAccountStore {
   logout = () => {
     this.setAccount(null)
     this.setToken(null)
+  }
+
+  updateProfile = async (data: TUpdateProfileData) => {
+    this.setIsLoading(true)
+
+    const response = await accountService.updateProfile(data)
+
+    if ('data' in response) {
+      this.setAccount(response.data.user)
+    }
+
+    this.setIsLoading(false)
+    return response
   }
 }

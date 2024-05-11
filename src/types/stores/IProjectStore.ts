@@ -2,7 +2,7 @@ import { ObservableMap } from "mobx";
 
 import { APIResponse } from "types/API/TAPI.ts";
 
-import { TProject } from "types/entities/TProject.ts";
+import { TProject, TProjectCreate } from "types/entities/TProject.ts";
 import { GetProjectResponse, GetProjectsResponse } from "types/API/TProjectResponse.ts";
 
 export interface IProjectStore {
@@ -23,7 +23,7 @@ export interface IProjectStore {
   // async
   getAll(): APIResponse<GetProjectsResponse>
   getOne(id: number): APIResponse<GetProjectResponse>
-  create(): Promise<void>
+  create(project: TProjectCreate): APIResponse<GetProjectResponse>
   update(): Promise<void>
   delete(): Promise<void>
 }

@@ -5,7 +5,7 @@
   --Primary-900: #1E3A8A;
   --Primary-800: #1E40AF;
   --Primary-700: #1D4ED8;
-  --Primary-600-base: #2563EB;
+  --Primary-600-base: #366fec;
   --Primary-500: #3B82F6;
   --Primary-400: #60A5FA;
   --Primary-300: #93C5FD;
@@ -54,13 +54,16 @@
   --Additional-purple: #8B5CF6;
   --Additional-emerald: #34D399;
   --Additional-red: #e8524a;
+
+  // App
+  --Overlay-background: rgba(29, 31, 37, 0.39);
 }
 
 html[app_theme='dark'] {
   --App-bg: #1B1B1B;
 
   // Primary
-  --Primary-600-base: #219BFF;
+  --Primary-600-base: #1f88de;
 
   // Secondary
 
@@ -70,10 +73,14 @@ html[app_theme='dark'] {
   --Greyscale-400: #9d9fa9;
   --Greyscale-300: #595c5e;
   --Greyscale-200: #575757;
-  --Greyscale-100: #464646;
+  --Greyscale-100: #343434;
   --Greyscale-50: #262626;
 
   // Additional
   --Additional-emerald: #34D399;
   --Additional-white: #1f1f1f;
+  --Additional-red: #bb423b;
+
+  // App
+  --Overlay-background: rgba(0, 0, 0, 0.42);
 }

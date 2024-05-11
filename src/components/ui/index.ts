@@ -1,5 +1,6 @@
 export * from './board'
 export * from './empty-item'
 export * from './hr'
+export * from './info-list'
 export * from './list'
 export * from './password-input'

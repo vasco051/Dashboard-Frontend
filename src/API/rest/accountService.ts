@@ -1,8 +1,13 @@
 import makeRequest from "API/makeRequest.ts";
 
-import { TLoginData, TRegistrationData } from "types/entities/TAccount.ts";
+import { TLoginData, TRegistrationData, TUpdateProfileData } from "types/entities/TAccount.ts";
 
-import { GetAuthResponse, GetLoginResponse, GetRegistrationResponse } from "types/API/TAccountResponse.ts";
+import {
+  GetAuthResponse,
+  GetLoginResponse,
+  GetRegistrationResponse,
+  GetUpdateProfileResponse
+} from "types/API/TAccountResponse.ts";
 
 class AccountService {
   async registration(data: TRegistrationData) {
@@ -24,6 +29,15 @@ class AccountService {
   async auth() {
     return await makeRequest<GetAuthResponse>({
       url: 'api/auth',
+      hasAuthToken: true,
+    })
+  }
+
+  async updateProfile(data: TUpdateProfileData) {
+    return await makeRequest<GetUpdateProfileResponse>({
+      url: 'api/users',
+      method: 'put',
+      data,
       hasAuthToken: true,
     })
   }

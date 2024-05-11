@@ -1,0 +1,23 @@
+@import "../../../../assets/styles/templates";
+
+.popup {
+  @include flex-col-gap(32px);
+
+  max-width: 600px;
+  width: 100%;
+}
+
+.form {
+  @include flex-col-gap(16px);
+}
+
+.buttons {
+  @include flex-col-gap(8px);
+
+  margin-top: 16px;
+  width: 100%;
+
+  button {
+    width: 100%
+  }
+}

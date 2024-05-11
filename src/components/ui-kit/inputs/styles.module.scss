@@ -4,6 +4,15 @@
   @include flex-col-gap(12px);
 }
 
+.label {
+  width: max-content;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--Greyscale-400);
+}
+
 .input, .textarea {
   @extend %transition;
   transition-property: border-color;
@@ -17,7 +26,7 @@
   padding: 15px;
   border-radius: 12px;
 
-  color: var(--Greyscale-400);
+  color: var(--Greyscale-900);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -45,7 +54,7 @@
 }
 
 .error {
-  color: var(--Secondary-Glamour-pink-500-base, #ED4F9D);
+  color: var(--Secondary-Glamour-pink-500-base);
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -79,10 +88,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  svg path {
-    stroke: var(--Greyscale-500);
-  }
+.fillIcon svg path {
+  fill: var(--Greyscale-500);
+}
+
+.strokeIcon svg path {
+  stroke: var(--Greyscale-500);
 }
 
 .leftSlot {

@@ -1,0 +1,27 @@
+@import "src/assets/styles/templates";
+
+.controls {
+  @include flex-gap(4px);
+
+  .icon {
+    @extend %transition;
+    padding: 4px;
+
+    max-width: 20px;
+    max-height: 20px;
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+
+    &:hover path {
+      opacity: 0.8;
+    }
+
+    path {
+      @extend %transition;
+      stroke: var(--Greyscale-400, #94A3B8);
+    }
+  }
+
+}
