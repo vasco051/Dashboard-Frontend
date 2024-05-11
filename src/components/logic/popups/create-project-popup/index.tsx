@@ -84,15 +84,6 @@ export const CreateProjectPopup = observer(({children}: ICreateProjectPopup) => 
             error={formik.errors.color}
           />
 
-          <Input
-            name='name'
-            label='Название начальной колонки*'
-            placeholder='Работа'
-            value='Задачи к выполнению'
-            onChange={formik.handleChange}
-            error={formik.errors.name}
-          />
-
           <div className={styles.buttons}>
             <Button theme={ButtonThemeVariant.PRIMARY}>Создать</Button>
             <Button theme={ButtonThemeVariant.SECONDARY} onClick={onClosePopup}>Отмена</Button>
